@@ -1,0 +1,3 @@
+C:/Users/aless/Desktop/ESONERO/cmake-build-debug/CMakeFiles/ESONERO.dir
+C:/Users/aless/Desktop/ESONERO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/aless/Desktop/ESONERO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
