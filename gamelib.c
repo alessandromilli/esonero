@@ -18,37 +18,30 @@ time_t start, end;
 //--------------------------------------------------------------------------------------------------------
 static void color(char c){
     switch (c) {
-        case 'R':
         case 'r':
             printf("\033[0;31m");
             // Red
             break;
-        case 'G':
         case 'g':
             printf("\033[0;32m");
             // Green
             break;
-        case 'Y':
         case 'y':
             printf("\033[0;33m");
             // Yellow
             break;
-        case 'B':
         case 'b':
             printf("\033[0;34m");
             // Blue
             break;
-        case 'P':
         case 'p':
             printf("\033[0;35m");
             // Purple
             break;
-        case 'C':
         case 'c':
             printf("\033[0;36m");
             // Cyan
             break;
-        case 'X':
         case 'x':
             // Random
             switch (rand() % 6) {
@@ -78,7 +71,6 @@ static void color(char c){
                     break;
             }
             break;
-        case 'W':
         case 'w':
         default:
             printf("\033[0;37m");
@@ -946,26 +938,7 @@ int imposta_gioco(){
 
 
     int z, x, y;
-    printf("\n-------------------------------------------------------------------------------------------------------------"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                  |"
-           "\n|                                                                                                            |"
-           "\n|                                    Poi premere INVIO per continuare                                        |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|____________________________________________________________________________________________________________|");
-    scanf("%*[^\n]%*c");
-    getchar();
+
     // Dynamic memory deallocation
     if(giocatori[0] != NULL){
         free(zona_caravan);
@@ -990,6 +963,25 @@ int imposta_gioco(){
     int usrChoice = -1;
     level = 0;
 
+    printf("\n-------------------------------------------------------------------------------------------------------------"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                  |"
+           "\n|                                                                                                            |"
+           "\n|                                    Poi premere INVIO per continuare                                        |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|____________________________________________________________________________________________________________|");
+    getchar();
     do {
 
         cls();
