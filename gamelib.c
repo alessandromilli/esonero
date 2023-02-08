@@ -964,7 +964,7 @@ int imposta_gioco(){
            "\n|                                                                                                            |"
            "\n|                                                                                                            |"
            "\n|____________________________________________________________________________________________________________|");
-    while( getchar() != '\n' );
+    getchar();
     // Dynamic memory deallocation
     if(giocatori[0] != NULL){
         free(zona_caravan);
@@ -1057,7 +1057,7 @@ int imposta_gioco(){
                     valid = true;
                     printf("\nYour name is is: \"%s\", press ENTER to Continue:", giocatori[z]->nome_giocatore);
                     scanf("%*[^\n]%*c");
-                    while ((getchar()) != '\n');
+
                     //This "flushes" the stdin buffer up until the \n
                     /* the %*[^\n] part scans the buffer until it finds a \n
                      * the * part discards whatever was just scanned
