@@ -981,6 +981,7 @@ int imposta_gioco(){
            "\n|                                                                                                            |"
            "\n|                                                                                                            |"
            "\n|____________________________________________________________________________________________________________|");
+    while(getchar()!='\n');
     getchar();
     do {
         printf("\n\n\n\n\n\n\n                                        Insert the number of players"
