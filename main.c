@@ -108,7 +108,7 @@ int main() {
             break;
 
     }
-    printf("\\033[0;37m");
+    printf("\033[0;37m");
     do {
         do {
             printf("\n\n"
