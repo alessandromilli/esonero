@@ -984,6 +984,7 @@ int imposta_gioco(){
     while(getchar()!='\n');
     getchar();
     do {
+        cls();
         printf("\n\n\n\n\n\n\n                                        Insert the number of players"
                "\n                                                    (1-4)"
                "\n\n\n\n\n\n\n\n\n>");
@@ -1017,7 +1018,7 @@ int imposta_gioco(){
 
     // Cleans Up buffer for the fgets after the scanf (which leaves an /n)
     while ((getchar()) != '\n');
-
+    cls();
     for(z=0; z<4;z++){
         if(z<playerNumber){
             // Allocate memory and initialize the z-th player
