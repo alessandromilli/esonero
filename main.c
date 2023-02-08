@@ -108,8 +108,7 @@ int main() {
             break;
 
     }
-    printf("\033[0;37m");
-    printf("\e[1;1H\e[2J");
+
     do {
         do {
             printf("\n\n"

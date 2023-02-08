@@ -946,24 +946,25 @@ int imposta_gioco(){
 
 
     int z, x, y;
-    printf("\n--------------------------------------------------------------------------------------------------------"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |"
-           "\n                                                                                                       |");
+    printf("\n-------------------------------------------------------------------------------------------------------------"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                  |"
+           "\n|                                                                                                            |"
+           "\n|                                    Poi premere INVIO per continuare                                        |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|                                                                                                            |"
+           "\n|____________________________________________________________________________________________________________|");
+    while( getchar() != '\n' );
     // Dynamic memory deallocation
     if(giocatori[0] != NULL){
         free(zona_caravan);
@@ -989,7 +990,11 @@ int imposta_gioco(){
     level = 0;
 
     do {
-        printf("\n\nInsert the number of players (1-4):");
+
+        cls();
+        printf("\n\n\n\n\n\n\n                                        Insert the number of players"
+               "\n                                                    (1-4)"
+               "\n\n\n\n\n\n\n\n\n>");
         exitCode = scanf("%d", &playerNumber);
 
         if (exitCode==1 && playerNumber >= 1 && playerNumber <= 4) {
@@ -1027,6 +1032,9 @@ int imposta_gioco(){
             giocatori[z] = malloc(sizeof(struct Giocatore));
             // Insert Name
             do {
+                for (x=0;x<z;x++) {
+
+                }
                 printf("\nPlayer %d, Insert Your Name:", z+1);
 
                 fgets(giocatori[z]->nome_giocatore, 64, stdin);
