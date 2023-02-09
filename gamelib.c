@@ -626,6 +626,7 @@ static void decrementa_sanita(struct Giocatore* p){
     // The Assignment states that whenever the player does something, there is a 20% chance that the player's mental health will decrease by 15 points
     if(rand() % 5 == 0){
         color('r');
+        cls();
         // Decrease the player mental health
         if(p->sanita_mentale<15){
             // The mental health value can't be lower than zero
@@ -635,27 +636,31 @@ static void decrementa_sanita(struct Giocatore* p){
         }
         switch (rand() % 5) {
             case 0:{
-                printf("\n%s sbatte il mignolino su di un mobile infestato, la sua sanita' mentale scende di 15 punti!\n", p->nome_giocatore);
+                printf("\n\n\n\n\n\n\n\n\n\n%s sbatte il mignolino su di un mobile infestato, la sua sanita' mentale scende di 15 punti!\n\n\n\n\n\n\n\n\n", p->nome_giocatore);
                 break;
             }
             case 1:{
-                printf("\n%s viene morso da un ragno, la sua sanita' mentale scende di 15 punti!\n", p->nome_giocatore);
+                printf("\n\n\n\n\n\n\n\n\n\n%s viene morso da un ragno, la sua sanita' mentale scende di 15 punti!\n\n\n\n\n\n\n\n\n", p->nome_giocatore);
                 break;
             }
             case 2:{
-                printf("\n%s inciampa e cade a terra, la sua sanita' mentale scende di 15 punti!\n", p->nome_giocatore);
+                printf("\n\n\n\n\n\n\n\n\n\n%s inciampa e cade a terra, la sua sanita' mentale scende di 15 punti!\n\n\n\n\n\n\n\n\n", p->nome_giocatore);
                 break;
             }
             case 3:{
-                printf("\n%s per sbaglio pesta una cacca, la sua sanita' mentale scende di 15 punti!\n", p->nome_giocatore);
+                printf("\n\n\n\n\n\n\n\n\n\n%s per sbaglio pesta una cacca, la sua sanita' mentale scende di 15 punti!\n\n\n\n\n\n\n\n\n", p->nome_giocatore);
                 break;
             }
             case 4:{
-                printf("\nUna zanzara non la smette di ronzare intorno alle orecchie di %s, la sua sanita' mentale scende di 15 punti!\n", p->nome_giocatore);
+                printf("\n\n\n\n\n\n\n\n\n\nUna zanzara non la smette di ronzare intorno alle orecchie di %s, la sua sanita' mentale scende di 15 punti!\n\n\n\n\n\n\n\n\n", p->nome_giocatore);
                 break;
             }
         }
         color('w');
+        // 1 second sleep
+        time(&start);
+        do time(&end); while(difftime(end, start) <= 1);
+        cls();
     }
 }
 
@@ -880,6 +885,7 @@ static int usa_oggetto(struct Giocatore* p){
             do time(&end); while(difftime(end, start) <= 2);
             color('w');
             cls();
+            return -1;
         }
     }while(1);
 }
