@@ -870,17 +870,17 @@ static int torna_caravan(struct Giocatore* p){
     alr_dep = false;
     tof= false;
     cls();
-    printf("\n\n"
-           "\n                                             ______________"
+    printf("\n                                                 CARAVAN..."
+           "\n\n                                             ______________"
            "\n                                            /      __      \\"
            "\n                                           | [][] |[]|  __  |"
            "\n                                           |      | .| |__| |"
            "\n                                           | ___  |  | ___  |"
-           "\n                                           [( * )_|__|( * );]"
-           "\n                                                CARAVAN...");
+           "\n                                           [( * )_|__|( * );]\n\n");
+
     // 1 second sleep
     time(&start);
-    do time(&end); while(difftime(end, start) <= 1);
+    do time(&end); while(difftime(end, start) <= 5);
 
     for(i=0;i<4;i++){
         // For every position of the player's backpack
