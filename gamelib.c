@@ -576,23 +576,26 @@ static int raccogli_oggetto(struct Giocatore* p){
             color('w');
             time(&start);
             do time(&end); while(difftime(end, start) <= 1);
+            cls();
             return -1;
         } else {
             // The item has been picked up correctly
             color('g');
-            printf("\n\n\n\n\n\n                                      Hai raccolto l'oggetto!\n\n\n\n\n\n\n\n\n");
+            printf("\n\n\n\n\n\n\n                                      Hai raccolto l'oggetto!\n\n\n\n\n\n\n\n\n\n");
             color('w');
             time(&start);
             do time(&end); while(difftime(end, start) <= 1);
+            cls();
             return 1;
         }
     } else {
         // Current zone hasn't got any items to pick up
         color('r');
-        printf("\n                       Non c'e' nessun oggetto da raccogliere in questa zona!\n");
+        printf("\n\n\n\n\n\n                       Non c'e' nessun oggetto da raccogliere in questa zona!\n\n\n\n\n\n\n\n\n");
         color('w');
         time(&start);
         do time(&end); while(difftime(end, start) <= 1);
+        cls();
         return 0;
     }
 }
@@ -880,7 +883,7 @@ static int usa_oggetto(struct Giocatore* p){
                                 printf("!\n\n\n\n\n\n\n\n\n");
                             }
                         } else {
-                            printf("non succede niente...\n");
+                            printf("non succede niente...\n\n\n\n\n\n\n\n");
                         }
                         p->zaino[usrChoice-1] = (int) nessun_oggetto;
                         return 1;
