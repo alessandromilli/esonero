@@ -964,12 +964,12 @@ int imposta_gioco(){
     level = 0;
 
     printf("\n-------------------------------------------------------------------------------------------------------------"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
+           "\n|                                                                                                        __  |"
+           "\n|                                                                                                         /| |"
+           "\n|                                                                                                        /   |"
+           "\n|                                                                                                       /    |"
+           "\n|                                                                                                      /     |"
+           "\n|                                                                                                    QUI     |"
            "\n|                                                                                                            |"
            "\n|                                                                                                            |"
            "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                  |"
@@ -990,6 +990,8 @@ int imposta_gioco(){
                "\n\n\n\n\n\n\n\n\n>");
         exitCode = scanf("%d", &playerNumber);
 
+
+
         if (exitCode==1 && playerNumber >= 1 && playerNumber <= 4) {
             // The selection made by the player is actually a valid one
             valid = true;
@@ -998,6 +1000,10 @@ int imposta_gioco(){
             valid = false;
             printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
             scanf("%*[^\n]%*c");
+            // 2 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 2);
+            cls();
             // This "flushes" the stdin buffer up until the \n
             /* the %*[^\n] part scans the buffer until it finds a \n
              * the * part discards whatever was just scanned
@@ -1024,10 +1030,21 @@ int imposta_gioco(){
             // Allocate memory and initialize the z-th player
             giocatori[z] = malloc(sizeof(struct Giocatore));
             // Insert Name
+            printf("\n\n\n");
+            for (y=0;y<z;y++){
+                printf("\n Player %d, %s", y, giocatori[y]->nome_giocatore);
+            }
+            for (y=z;y<playerNumber;y++){
+                printf("\n");
+            }
+            for (y=0;y<(4-playerNumber);y++){
+                printf("\n");
+            }
             do {
                 for (x=0;x<z;x++) {
 
                 }
+
                 printf("\nPlayer %d, Insert Your Name:", z+1);
 
                 fgets(giocatori[z]->nome_giocatore, 64, stdin);
@@ -1044,7 +1061,6 @@ int imposta_gioco(){
                     valid = false;
                     printf("\nAN UNEXPECTED ERROR OCCURED, INSERT AGAIN\n");
                     scanf("%*[^\n]%*c");
-                    printf("\n");
 
                 } else {
                     valid = true;
@@ -1223,6 +1239,7 @@ int imposta_gioco(){
             }
             oggetti_iniziali[usrChoice-1] = 99;
         } while (!valid);
+        cls();
     }
 
 
