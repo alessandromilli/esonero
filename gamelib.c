@@ -495,7 +495,8 @@ static void stampa_mappa(){
         stampa_zona(tmp);
         tmp = tmp->prossima_zona;
     } while(tmp != pFirst);
-    printf("\n                                        Premere INVIO per continuare");
+    printf("\n                                      Scorrere con la rotella del Mouse"
+           "\n                                        Premere INVIO per continuare");
     while ((getchar()) != '\n');
     getchar();
     cls();
@@ -1325,6 +1326,10 @@ int imposta_gioco(){
                 switch (usrChoice) {
                     case 1:{
                         inserisci_zona();
+                        printf("\n                                        Premere INVIO per continuare");
+                        while ((getchar()) != '\n');
+                        getchar();
+                        cls();
                         break;
                     }
                     case 2:{
@@ -1465,7 +1470,7 @@ int gioca(){
                             case 3:{
                                 // Display current zone data
                                 stampa_zona(giocatori[turni[x]]->posizione);
-                                printf("\n                                        Premere INVIO per continuare");
+                                printf("\n                                       Premere INVIO per continuare");
                                 while ((getchar()) != '\n');
                                 getchar();
                                 cls();
