@@ -472,6 +472,7 @@ static void inserisci_zona(){
 
 static void cancella_zona(){
     // Check if it isn't the only zone
+    cls();
     color('r');
     if(pLast->prossima_zona != pFirst->prossima_zona){
         // There are at least 2 zones
