@@ -590,6 +590,7 @@ static int raccogli_oggetto(struct Giocatore* p){
 
 static int raccogli_prova(struct Giocatore* p){
     int i;
+    cls();
     if(p->posizione->prova != nessuna_prova){
         /*
          * There is some kind of evidence to pick up
@@ -608,16 +609,34 @@ static int raccogli_prova(struct Giocatore* p){
         }
         if(p->posizione->prova != nessuna_prova){
             // The evidence could not be picked up, the player hasn't got the correct "evidence picker"
-            printf("\n            Non e' stato possibile raccogliere la prova, non si ha l'oggetto corrispondente!\n");
+            color('r');
+            printf("\n\n\n\n\n\n\n\n\n\n            Non e' stato possibile raccogliere la prova, non si ha l'oggetto corrispondente!\n\n\n\n\n\n\n\n\n");
+            color('w');
+            // 1 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 1);
+            cls();
             return 0;
         } else {
             // Evidence collected correctly!
-            printf("\n                              La prova e' stata raccolta con successo!\n");
+            color('g');
+            printf("\n\n\n\n\n\n\n\n\n\n                              La prova e' stata raccolta con successo!\n\n\n\n\n\n\n\n\n");
+            color('w');
+            // 1 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 1);
+            cls();
             return 1;
         }
     } else {
         // The current zone hasn't got any evidence to pick up
-        printf("\n                               Non c'e' nessuna prova da raccogliere!\n");
+        color('r');
+        printf("\n\n\n\n\n\n\n\n\n\n                               Non c'e' nessuna prova da raccogliere!\n\n\n\n\n\n\n\n\n");
+        color('w');
+        // 1 second sleep
+        time(&start);
+        do time(&end); while(difftime(end, start) <= 1);
+        cls();
         return 0;
     }
 }
