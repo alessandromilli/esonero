@@ -491,7 +491,8 @@ static void cancella_zona(){
 static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
     cls();
-    printf("\n\n\n                                           Stampo Mappa...");
+    printf("\n\n\n\n\n\n--------------------------------------------------------------------------------------------------------"
+           "\n\n\n                                           Stampo Mappa...");
     do {
         stampa_zona(tmp);
         tmp = tmp->prossima_zona;
