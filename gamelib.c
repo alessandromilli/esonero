@@ -877,7 +877,7 @@ static int torna_caravan(struct Giocatore* p){
            "\n                                           |      | .| |__| |"
            "\n                                           | ___  |  | ___  |"
            "\n                                           [( * )_|__|( * );]"
-           "\n\n                                                CARAVAN...");
+           "\n                                                CARAVAN...");
     // 1 second sleep
     time(&start);
     do time(&end); while(difftime(end, start) <= 1);
