@@ -1158,7 +1158,7 @@ int imposta_gioco(){
     cls();
     printf("\n\n\n\n\n                                     Scelta degli oggetti iniziali");
     for(z=0; z<playerNumber; z++){
-        printf("\n                                              ___________");
+        printf("\n                                              _____________");
         for (x = 0; x < playerNumber; x++) {
             printf("\n                                             |%d|", x+1);
             switch (oggetti_iniziali[x]) {
@@ -1189,7 +1189,7 @@ int imposta_gioco(){
             }
             printf("|");
         }
-        printf("\n                                             |-----------|");
+        printf("\n                                              -------------");
         for(x=0;x<(4-playerNumber);x++){
             printf("\n");
         }
