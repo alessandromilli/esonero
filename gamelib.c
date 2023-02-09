@@ -1439,13 +1439,13 @@ int gioca(){
             }
             // The player is alive!
             adv=1;
-
+            cls();
             printf("\n\n[%s e' il tuo turno!]", giocatori[turni[x]]->nome_giocatore);
             // Show Menu
             do {
                 do {
 
-                    printf("\n\n                                    _______________________________"
+                    printf("\n\n\n                                    _______________________________"
                            "\n                                   |1|       Vai Al Caravan        |"
                            "\n                                   |2| Mostra i dati del Giocatore |"
                            "\n                                   |3|   Mostra la zona corrente   |"
@@ -1455,7 +1455,7 @@ int gioca(){
                            "\n                                   |7|        Usa un Oggetto       |"
                            "\n                                   |8|            Passa            |"
                            "\n                                    -------------------------------"
-                           "\n\n\n>");
+                           "\n\n\n\n\n>");
                     exitCode = scanf("%d", &usrChoice);
 
                     if (exitCode==1 && usrChoice >= 1 && usrChoice <= 8) {
