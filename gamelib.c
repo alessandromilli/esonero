@@ -503,7 +503,7 @@ static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
     printf("\n\n\n\n\n\n\n\n\n");
     cls();
-    printf("----------------------------------------------------------------------------------------------------------"
+    printf("---------------------------------------------------------------------------------------------------------"
            "\n\n\n                                              Stampo Mappa...");
     do {
         stampa_zona(tmp);
@@ -1318,13 +1318,13 @@ int imposta_gioco(){
     do {
         do {
             cls();
-            printf("\n\n\n\n                           Game Master, e' ora di generare la mappa di Gioco!"
-                   "\n\n                                    ____________________________"
-                   "\n                                   |1|    Inserisci una Zona    |"
-                   "\n                                   |2|  Cancella l'ultima zona  |"
-                   "\n                                   |3|     Stampa La Mappa      |"
-                   "\n                                   |4|     Termina e Salva      |"
-                   "\n                                    ----------------------------"
+            printf("\n\n\n\n                             Game Master, e' ora di generare la mappa di Gioco!"
+                   "\n\n                                      ____________________________"
+                   "\n                                     |1|    Inserisci una Zona    |"
+                   "\n                                     |2|  Cancella l'ultima zona  |"
+                   "\n                                     |3|     Stampa La Mappa      |"
+                   "\n                                     |4|     Termina e Salva      |"
+                   "\n                                      ----------------------------"
                    "\n\n\n\n\n\n>");
             exitCode = scanf("%d", &usrChoice);
 
@@ -1440,21 +1440,22 @@ int gioca(){
             // The player is alive!
             adv=1;
 
-            printf("\n\n%s (Player %d), it's your turn!", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
-
+            printf("\n\n[%s e' il tuo turno!]", giocatori[turni[x]]->nome_giocatore);
             // Show Menu
             do {
                 do {
 
-                    printf("\n  1)Torna Al Caravan"
-                           "\n  2)Mostra i dati del Giocatore"
-                           "\n  3)Mostra la zona corrente"
-                           "\n  4)Avanza alla prossima zona"
-                           "\n  5)Raccogli la prova"
-                           "\n  6)Raccogli l'oggetto"
-                           "\n  7)Usa un Oggetto"
-                           "\n  8)Passa"
-                           "\nLa tua Scelta:");
+                    printf("\n\n                                    _______________________________"
+                           "\n                                   |1|       Vai Al Caravan        |"
+                           "\n                                   |2| Mostra i dati del Giocatore |"
+                           "\n                                   |3|   Mostra la zona corrente   |"
+                           "\n                                   |4|  Avanza alla prossima zona  |"
+                           "\n                                   |5|      Raccogli la prova      |"
+                           "\n                                   |6|      Raccogli l'oggetto     |"
+                           "\n                                   |7|        Usa un Oggetto       |"
+                           "\n                                   |8|            Passa            |"
+                           "\n                                    -------------------------------"
+                           "\n\n\n>");
                     exitCode = scanf("%d", &usrChoice);
 
                     if (exitCode==1 && usrChoice >= 1 && usrChoice <= 8) {
