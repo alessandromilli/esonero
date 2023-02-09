@@ -239,7 +239,6 @@ static int genera_ogg_iniziale(){
     }
 }
 
-//DONE
 static void stampa_giocatore(struct Giocatore* p){
 
     int z;
@@ -345,7 +344,6 @@ static void stampa_giocatore(struct Giocatore* p){
     cls();
 }
 
-//DONE
 static void stampa_zona(struct Zona_mappa *z){
     if(z != pFirst){
         char zona[13];
@@ -460,7 +458,6 @@ static void stampa_zona(struct Zona_mappa *z){
     }
 }
 
-//DONE
 static void inserisci_zona(){
     struct Zona_mappa* tmp_zona = malloc(sizeof(struct Zona_mappa));
     pLast->prossima_zona = tmp_zona;
@@ -476,7 +473,6 @@ static void inserisci_zona(){
     stampa_zona(pLast);
 }
 
-//DONE
 static void cancella_zona(){
     // Check if it isn't the only zone
     cls();
@@ -501,7 +497,6 @@ static void cancella_zona(){
     cls();
 }
 
-//DONE
 static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
     printf("\n\n\n\n\n\n\n\n\n");
@@ -519,7 +514,6 @@ static void stampa_mappa(){
     cls();
 }
 
-//DONE
 static int fantasma(){
     /*
      * Level can have the following values:
@@ -550,7 +544,7 @@ static int fantasma(){
                "\n                                              `.              `.     ."
                "\n                                                `'`'`'`---..,___`;.-'");
         color('r');
-        printf("\n                                          E' comparso un fantasma!\n");
+        printf("\n\n                                          E' comparso un fantasma!\n");
         color('w');
         // 2 second sleep
         time(&start);
@@ -564,6 +558,7 @@ static int fantasma(){
 }
 
 static int raccogli_oggetto(struct Giocatore* p){
+    cls();
     int i;
     if(p->posizione->oggetto_zona != nessun_oggetto){
         for(i=0;i<4;i++){
@@ -576,16 +571,28 @@ static int raccogli_oggetto(struct Giocatore* p){
         }
         if(p->posizione->oggetto_zona != nessun_oggetto){
             // If there is still an item in the current zone, it means that it hasn't been picked up and the backpack is full
-            printf("\n                   Non e' stato possibile raccogliere l'oggetto, lo zaino e' pieno!\n");
+            color('r');
+            printf("\n\n\n\n\n\n                   Non e' stato possibile raccogliere l'oggetto, lo zaino e' pieno!\n\n\n\n\n\n\n\n\n");
+            color('w');
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 0.5);
             return -1;
         } else {
             // The item has been picked up correctly
-            printf("\n                                      Hai raccolto l'oggetto!\n");
+            color('g');
+            printf("\n\n\n\n\n\n                                      Hai raccolto l'oggetto!\n\n\n\n\n\n\n\n\n");
+            color('w');
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 0.5);
             return 1;
         }
     } else {
         // Current zone hasn't got any items to pick up
+        color('r');
         printf("\n                       Non c'e' nessun oggetto da raccogliere in questa zona!\n");
+        color('w');
+        time(&start);
+        do time(&end); while(difftime(end, start) <= 0.5);
         return 0;
     }
 }
