@@ -1037,7 +1037,7 @@ int imposta_gioco(){
             for (y=0;y<(4-playerNumber);y++){
                 printf("\n");
             }
-            printf("\n\n\n\n\n\n");
+            printf("\n\n\n\n\n");
             do {
                 while ((getchar()) != '\n');
                 for (x=0;x<z;x++) {
@@ -1156,10 +1156,11 @@ int imposta_gioco(){
 
     turn_manager(turni);
     cls();
-    printf("\n\n\n\n\n\n\n                                     Scelta degli oggetti iniziali");
+    printf("\n\n\n\n\n                                     Scelta degli oggetti iniziali");
     for(z=0; z<playerNumber; z++){
+        printf("\n                                              ___________");
         for (x = 0; x < playerNumber; x++) {
-            printf("\n\n                                             |%d|", x+1);
+            printf("\n                                             |%d|", x+1);
             switch (oggetti_iniziali[x]) {
                 case 0:{
                     printf("    EMF    ");
@@ -1188,9 +1189,11 @@ int imposta_gioco(){
             }
             printf("|");
         }
+        printf("\n                                             |-----------|");
         for(x=0;x<(4-playerNumber);x++){
             printf("\n");
         }
+        printf("\n\n");
         do {
             printf("\n[Giocatore %d, %s]>", turni[z]+1, giocatori[turni[z]]->nome_giocatore);
             exitCode = scanf("%d", &usrChoice);
