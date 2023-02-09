@@ -472,6 +472,7 @@ static void inserisci_zona(){
 
 static void cancella_zona(){
     // Check if it isn't the only zone
+    color('r');
     if(pLast->prossima_zona != pFirst->prossima_zona){
         // There are at least 2 zones
         struct Zona_mappa* tmp_penultima = pFirst;
@@ -480,25 +481,29 @@ static void cancella_zona(){
         }
         tmp_penultima->prossima_zona = pFirst;
         pLast = tmp_penultima;
-        printf("\n                                          Zona Cancellata!\n");
+        printf("\n\n\n\n                                          Zona Cancellata!\n\n\n\n");
     } else {
         // Player is trying to delete the only zone, it's not possible
-        printf("\n                       Purtroppo non e' possibile cancellare la zona iniziale!\n");
+        printf("\n\n\n\n                       Purtroppo non e' possibile cancellare la zona iniziale!\n\n\n\n");
     }
+    color('w');
+    printf("\n                                        Premere INVIO per continuare\n");
+    while ((getchar()) != '\n');
+    getchar();
+    cls();
 }
-
 
 static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
     cls();
-    printf("\n\n\n\n\n\n-----------------------------------------------------------------------------------------------------------"
+    printf("\n\n\n\n\n\n----------------------------------------------------------------------------------------------------------"
            "\n\n\n                                              Stampo Mappa...");
     do {
         stampa_zona(tmp);
         tmp = tmp->prossima_zona;
     } while(tmp != pFirst);
     printf("\n                                      Scorrere con la rotella del Mouse"
-           "\n                                        Premere INVIO per continuare");
+           "\n                                        Premere INVIO per continuare\n");
     while ((getchar()) != '\n');
     getchar();
     cls();
