@@ -967,17 +967,18 @@ static int torna_caravan(struct Giocatore* p){
         // For every position of the player's backpack
         if(p->zaino[i] >= 30 && p->zaino[i] <= 32){
             // Check if the i-th element of the Player is a piece of evidence
+            color('g');
             switch (p->zaino[i]) {
                 case 30:{
-                    printf("\n\n\n\n\n\n\n\n\n                                    Ha raccolto una prova con l'EMF!");
+                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con l'EMF!\n");
                     break;
                 }
                 case 31:{
-                    printf("\n\n\n\n\n\n\n\n\n                                Ha raccolto una prova con lo Spirit Box!");
+                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con lo Spirit Box!\n");
                     break;
                 }
                 case 32:{
-                    printf("\n\n\n\n\n\n\n\n\n                               Ha registrato una prova con la Videocamera");
+                    printf("\n\n\n\n\n\n\n\n\n%s ha registrato una prova con la Videocamera\n");
                     break;
                 }
             }
@@ -1061,9 +1062,9 @@ static int torna_caravan(struct Giocatore* p){
             }
         }
     }
-    // 1 second sleep
+    // 2 second sleep
     time(&start);
-    do time(&end); while(difftime(end, start) <= 1);
+    do time(&end); while(difftime(end, start) <= 2);
     cls();
     p->posizione = pFirst;
     return ret;
