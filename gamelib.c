@@ -871,7 +871,8 @@ static int torna_caravan(struct Giocatore* p){
     tof= false;
     cls();
     color('x');
-    printf("\n\n\n\n                                               CARAVAN..."
+    printf("\n\n\n                                             Tornando al"
+           "\n                                               CARAVAN..."
            "\n\n\n                                             ______________"
            "\n                                            /      __      \\"
            "\n                                           | [][] |[]|  __  |"
