@@ -141,12 +141,12 @@ int main() {
     do {
         do {
             printf("\n\n\n\n\n"
-                   "                                        ___________________\n"
-                   "                                       |1|     Set Game    |\n"
-                   "                                       |2|       Play      |\n"
-                   "                                       |3|    Istruzioni   |\n"
-                   "                                       |4|       Esci      |\n"
-                   "                                        -------------------\n\n"
+                   "                                          ___________________\n"
+                   "                                         |1|     Set Game    |\n"
+                   "                                         |2|       Play      |\n"
+                   "                                         |3|    Istruzioni   |\n"
+                   "                                         |4|       Esci      |\n"
+                   "                                          -------------------\n\n"
                    "\n\n\n\n\nYour Choice>");
             exitCode = scanf("%d", &usrChoice);
             scanf("%*[^\n]%*c");
