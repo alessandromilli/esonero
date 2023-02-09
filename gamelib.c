@@ -1489,7 +1489,7 @@ int gioca(){
                                 }
                                 usrChoice = 8;
                                 cls();
-                                color('b');
+                                color('g');
                                 printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                 color('w');
                                 // 2 second sleep
@@ -1560,7 +1560,7 @@ int gioca(){
                             }
                             case 8:{
                                 cls();
-                                color('b');
+                                color('g');
                                 printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                 color('w');
                                 // 2 second sleep
