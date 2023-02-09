@@ -1729,7 +1729,7 @@ int gioca(){
                         }
                         cls();
                         color('r');
-                        printf("\n\n\n\n\n\n\n\n\n\n%s appena visto il Fantasma, da di matto, la sua sanita' mentale scende a %d\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
+                        printf("\n\n\n\n\n\n\n\n\n\n%s appena visto il Fantasma, da di matto, la sua sanita' mentale scende a %d\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, giocatori[turni[x]]->sanita_mentale);
                         usrChoice = 8;
                         // 1 second sleep
                         time(&start);
@@ -1746,7 +1746,7 @@ int gioca(){
                     // The player has just died
                     cls();
                     color('r');
-                    printf("\n\n\n\n\n\n\n\n\n\n%s e' impazzito e gli spiriti se lo sono preso!\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                    printf("\n\n\n\n\n\n\n\n\n\n%s e' impazzito e gli spiriti se lo sono preso!\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                     usrChoice = 8;
                     // 1 second sleep
                     time(&start);
