@@ -970,15 +970,15 @@ static int torna_caravan(struct Giocatore* p){
             color('g');
             switch (p->zaino[i]) {
                 case 30:{
-                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con l'EMF!\n", p->nome_giocatore);
+                    printf("\n\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con l'EMF!\n", p->nome_giocatore);
                     break;
                 }
                 case 31:{
-                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con lo Spirit Box!\n", p->nome_giocatore);
+                    printf("\n\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con lo Spirit Box!\n", p->nome_giocatore);
                     break;
                 }
                 case 32:{
-                    printf("\n\n\n\n\n\n\n\n\n%s ha registrato una prova con la Videocamera\n", p->nome_giocatore);
+                    printf("\n\n\n\n\n\n\n\n\n\n%s ha registrato una prova con la Videocamera\n", p->nome_giocatore);
                     break;
                 }
             }
@@ -1042,15 +1042,15 @@ static int torna_caravan(struct Giocatore* p){
                         p->zaino[x] = i;
                         switch (i) {
                             case 0:{
-                                printf("\n%s in un cassetto del Caravan trova un EMF e lo raccoglie\n\n\n\n\n\n\n\n", p->nome_giocatore);
+                                printf("\n%s in un cassetto del Caravan trova un EMF e lo raccoglie\n\n\n\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                             case 1:{
-                                printf("\n%s per terra davanti al Caravan trova uno Spirit Box e lo raccoglie\n\n\n\n\n\n\n\n", p->nome_giocatore);
+                                printf("\n%s per terra davanti al Caravan trova uno Spirit Box e lo raccoglie\n\n\n\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                             case 2:{
-                                printf("\n%s in un ripiano del Caravan trova una videocamera e la raccoglie\n\n\n\n\n\n\n\n", p->nome_giocatore);
+                                printf("\n%s in un ripiano del Caravan trova una videocamera e la raccoglie\n\n\n\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                         }
@@ -1830,24 +1830,6 @@ int gioca(){
         printf(", %s", giocatori[x]->nome_giocatore);
     }
     printf(", Grazie per aver giocato a PhalsoPhobia!");
-
-    // Dynamic memory deallocation
-    free(zona_caravan);
-    for(x=0;x<4;x++){
-        free(giocatori[x]);
-    }
-    struct Zona_mappa* tmp = pFirst;
-    for (x=0;tmp->prossima_zona != pFirst;x++) {
-        tmp = tmp->prossima_zona;
-    }
-    for(y=x;y>0;y--){
-        tmp = pFirst;
-        for (z=0;z<y;z++) {
-            tmp = tmp->prossima_zona;
-        }
-        free(tmp);
-    }
-    free(pFirst);
 
     return 0;
 }
