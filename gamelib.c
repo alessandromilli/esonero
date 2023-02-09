@@ -337,9 +337,9 @@ static void stampa_giocatore(struct Giocatore* p){
            "\n          |   |  |  |                        | %s |                           |"//17
            "\n          |   |__|__|                        |___________________|                           |"
            "\n          |__________________________________________________________________________________|\n\n", name, ms, bckpk[0], bckpk[1], bckpk[2], bckpk[3]);
-    // 3 second sleep
+    // 2 second sleep
     time(&start);
-    do time(&end); while(difftime(end, start) <= 3);
+    do time(&end); while(difftime(end, start) <= 2);
     cls();
 }
 
@@ -1527,13 +1527,13 @@ int gioca(){
                 }
             }while(usrChoice != 8);
 
-            // If there is at least 1 player that has an item that can be used to pick up evidence, the game will continue, if not it won't
+            // If there is at least 1 player that has an item that can be used to pick up evidence or some piece of evidence, the game will continue, if not it won't
             valid = false;
             for (y=0;y<playerNumber;y++) {
                 if(giocatori[y]->sanita_mentale > 0){
                     //Player is still alive
                     for (z=0;z<4;z++) {
-                        if(giocatori[y]->zaino[z] >= 0 && giocatori[y]->zaino[z] <= 2){
+                        if((giocatori[y]->zaino[z] >= 0 && giocatori[y]->zaino[z] <= 2) || (giocatori[y]->zaino[z] >= 30 && giocatori[y]->zaino[z] <= 32)){
                             valid = true;
                         }
                     }

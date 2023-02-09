@@ -110,10 +110,10 @@ int main() {
 
     }
 
-    // 3 second sleep
+    // 2 second sleep
     time_t start, end;
     time(&start);
-    do time(&end); while(difftime(end, start) <= 3);
+    do time(&end); while(difftime(end, start) <= 2);
     printf("\e[1;1H\e[2J");
 
 
