@@ -128,7 +128,7 @@ int main() {
                    "                                       |3|    Istruzioni   |\n"
                    "                                       |4|       Esci      |\n"
                    "                                        -------------------\n\n"
-                   "Your Choice>");
+                   "\n\n\nYour Choice>");
             exitCode = scanf("%d", &usrChoice);
             scanf("%*[^\n]%*c");
             //This "flushes" the stdin buffer up until the \n
