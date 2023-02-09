@@ -323,6 +323,7 @@ static void stampa_giocatore(struct Giocatore* p){
     }
     str_spacer(name, 64);
     str_spacer(ms, 3);
+    cls();
     printf("\n\n           __________________________________________________________________________________"
            "\n          |     ___                                  NOME:                                   |"
            "\n          |    /.,.\\    %s     |"//64
@@ -336,6 +337,10 @@ static void stampa_giocatore(struct Giocatore* p){
            "\n          |   |  |  |                        | %s |                           |"//17
            "\n          |   |__|__|                        |___________________|                           |"
            "\n          |__________________________________________________________________________________|\n\n", name, ms, bckpk[0], bckpk[1], bckpk[2], bckpk[3]);
+    // 3 second sleep
+    time(&start);
+    do time(&end); while(difftime(end, start) <= 3);
+    cls();
 }
 
 static void stampa_zona(struct Zona_mappa *z){
@@ -963,24 +968,24 @@ int imposta_gioco(){
     int usrChoice = -1;
     level = 0;
 
-    printf("\n-------------------------------------------------------------------------------------------------------------"
-           "\n|                                                                                                        __  |"
-           "\n|                                                                                                         /| |"
-           "\n|                                                                                                        /   |"
-           "\n|                                                                                                       /    |"
-           "\n|                                                                                                      /     |"
-           "\n|                                                                                                    QUI     |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                  |"
-           "\n|                                                                                                            |"
-           "\n|                                    Poi premere INVIO per continuare                                        |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|                                                                                                            |"
-           "\n|____________________________________________________________________________________________________________|");
+    printf("\n-----------------------------------------------------------------------------------------------------------"
+           "\n|                                                                                                      __  |"
+           "\n|                                                                                                       /| |"
+           "\n|                                                                                                      /   |"
+           "\n|                                                                                                     /    |"
+           "\n|                                                                                                    /     |"
+           "\n|                                                                                                  QUI     |"
+           "\n|                                                                                                          |"
+           "\n|                                                                                                          |"
+           "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                |"
+           "\n|                                                                                                          |"
+           "\n|                                    Poi premere INVIO per continuare                                      |"
+           "\n|                                                                                                          |"
+           "\n|                                                                                                          |"
+           "\n|                                                                                                          |"
+           "\n|                                                                                                          |"
+           "\n|                                                                                                          |"
+           "\n|__________________________________________________________________________________________________________|");
     while(getchar()!='\n');
     getchar();
     do {
@@ -1103,7 +1108,7 @@ int imposta_gioco(){
                "\n                                          |2|   Intermedio   |"
                "\n                                          |3|     Incubo     |"
                "\n                                           ------------------"
-               "\n\n\n\n\nN\n>");
+               "\n\n\n\n\n\n>");
         exitCode = scanf("%d", &usrChoice);
         if (exitCode==1 && usrChoice >= 1 && 3 >= usrChoice) {
             //The selection made by the player is actually a valid one
