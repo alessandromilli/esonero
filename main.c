@@ -49,6 +49,7 @@ int main() {
             // Cyan
             break;
     }
+    printf("\n\n\n");
     switch (rand() % 5) {
         case 0:
             printf("\n"
@@ -108,10 +109,18 @@ int main() {
             break;
 
     }
+
+    // 3 second sleep
+    time_t start, end;
+    time(&start);
+    do time(&end); while(difftime(end, start) <= 3);
+    printf("\e[1;1H\e[2J");
+
+
     printf("\033[0;37m");
     do {
         do {
-            printf("\n\n"
+            printf("\n\n\n\n\n"
                    "                                        ___________________\n"
                    "                                       |1|     Set Game    |\n"
                    "                                       |2|       Play      |\n"
