@@ -128,7 +128,7 @@ int main() {
             break;
 
     }
-    printf("\n\n\n\n");
+    printf("\n\n\n\n\n");
     // 2 second sleep
     time_t start, end;
     time(&start);

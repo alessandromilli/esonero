@@ -810,13 +810,21 @@ static int usa_oggetto(struct Giocatore* p){
             }
         } else {
             //the selection made by the player is either an invalid type or not an option
-            printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+            cls();
+            color('r');
+            valid = false;
+            printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
             scanf("%*[^\n]%*c");
             //This "flushes" the stdin buffer up until the \n
             /* the %*[^\n] part scans the buffer until it finds a \n
              * the * part discards whatever was just scanned
              * The %*c scans and discards the \n left by the first part
              * */
+            // 2 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 2);
+            color('w');
+            cls();
         }
     }while(1);
 }
@@ -984,19 +992,22 @@ int imposta_gioco(){
             // The selection made by the player is actually a valid one
             valid = true;
         } else {
-            // The selection made by the player is either an invalid type or not an option
-            valid = false;
-            printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
-            scanf("%*[^\n]%*c");
-            // 2 second sleep
-            time(&start);
-            do time(&end); while(difftime(end, start) <= 2);
+            //the selection made by the player is either an invalid type or not an option
             cls();
-            // This "flushes" the stdin buffer up until the \n
+            color('r');
+            valid = false;
+            printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
+            scanf("%*[^\n]%*c");
+            //This "flushes" the stdin buffer up until the \n
             /* the %*[^\n] part scans the buffer until it finds a \n
              * the * part discards whatever was just scanned
              * The %*c scans and discards the \n left by the first part
              * */
+            // 2 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 2);
+            color('w');
+            cls();
         }
     } while (!valid);
 
@@ -1109,7 +1120,6 @@ int imposta_gioco(){
              * The %*c scans and discards the \n left by the first part
              * */
             // 2 second sleep
-            time_t start, end;
             time(&start);
             do time(&end); while(difftime(end, start) <= 2);
             color('w');
@@ -1146,12 +1156,11 @@ int imposta_gioco(){
     } while (!valid);
 
     turn_manager(turni);
-
-    printf("\nScelta degli oggetti iniziali:");
+    cls();
+    printf("\n\n\n\n\n\n\n                                     Scelta degli oggetti iniziali");
     for(z=0; z<playerNumber; z++){
-        printf("\nGiocatore %d, %s:", turni[z]+1, giocatori[turni[z]]->nome_giocatore);
         for (x = 0; x < playerNumber; x++) {
-            printf("\n|%d|", x+1);
+            printf("\n\n                                             |%d|", x+1);
             switch (oggetti_iniziali[x]) {
                 case 0:{
                     printf("    EMF    ");
@@ -1180,8 +1189,11 @@ int imposta_gioco(){
             }
             printf("|");
         }
+        for(x=0;x<(4-playerNumber);x++){
+            printf("\n");
+        }
         do {
-            printf("\nLa tua Scelta:");
+            printf("\n[Giocatore %d, %s]>", turni[z]+1, giocatori[turni[z]]->nome_giocatore);
             exitCode = scanf("%d", &usrChoice);
             if (exitCode==1 && usrChoice >= 1 && usrChoice <= playerNumber) {
                 //The selection made by the player is actually a valid one
@@ -1218,23 +1230,43 @@ int imposta_gioco(){
                         break;
                     }
                     default:{
+                        //the selection made by the player is either an invalid type or not an option
+                        cls();
+                        color('r');
                         valid = false;
-                        printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                        printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
                         scanf("%*[^\n]%*c");
+                        //This "flushes" the stdin buffer up until the \n
+                        /* the %*[^\n] part scans the buffer until it finds a \n
+                         * the * part discards whatever was just scanned
+                         * The %*c scans and discards the \n left by the first part
+                         * */
+                        // 2 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 2);
+                        color('w');
+                        cls();
                         break;
                     }
 
                 }
             } else {
                 //the selection made by the player is either an invalid type or not an option
+                cls();
+                color('r');
                 valid = false;
-                printf("\n\nAN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN\n\n");
+                printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
                 scanf("%*[^\n]%*c");
                 //This "flushes" the stdin buffer up until the \n
                 /* the %*[^\n] part scans the buffer until it finds a \n
                  * the * part discards whatever was just scanned
                  * The %*c scans and discards the \n left by the first part
                  * */
+                // 2 second sleep
+                time(&start);
+                do time(&end); while(difftime(end, start) <= 2);
+                color('w');
+                cls();
             }
             oggetti_iniziali[usrChoice-1] = 99;
         } while (!valid);
@@ -1279,14 +1311,21 @@ int imposta_gioco(){
                 }
             } else {
                 //the selection made by the player is either an invalid type or not an option
+                cls();
+                color('r');
                 valid = false;
-                printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
                 scanf("%*[^\n]%*c");
                 //This "flushes" the stdin buffer up until the \n
                 /* the %*[^\n] part scans the buffer until it finds a \n
                  * the * part discards whatever was just scanned
                  * The %*c scans and discards the \n left by the first part
                  * */
+                // 2 second sleep
+                time(&start);
+                do time(&end); while(difftime(end, start) <= 2);
+                color('w');
+                cls();
                 usrChoice = -1;
             }
 
@@ -1446,27 +1485,41 @@ int gioca(){
                             }
                             default:{
                                 // Impossible to enter but better be safe than sorry
+                                cls();
+                                color('r');
                                 valid = false;
-                                printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                                printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
                                 scanf("%*[^\n]%*c");
                                 //This "flushes" the stdin buffer up until the \n
                                 /* the %*[^\n] part scans the buffer until it finds a \n
                                  * the * part discards whatever was just scanned
                                  * The %*c scans and discards the \n left by the first part
                                  * */
+                                // 2 second sleep
+                                time(&start);
+                                do time(&end); while(difftime(end, start) <= 2);
+                                color('w');
+                                cls();
                                 usrChoice = -1;
                             }
                         }
                     } else {
                         //the selection made by the player is either an invalid type or not an option
+                        cls();
+                        color('r');
                         valid = false;
-                        printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                        printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
                         scanf("%*[^\n]%*c");
                         //This "flushes" the stdin buffer up until the \n
                         /* the %*[^\n] part scans the buffer until it finds a \n
                          * the * part discards whatever was just scanned
                          * The %*c scans and discards the \n left by the first part
                          * */
+                        // 2 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 2);
+                        color('w');
+                        cls();
                         usrChoice = -1;
                     }
                 } while (!valid);
