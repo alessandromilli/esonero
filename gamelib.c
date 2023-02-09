@@ -1109,7 +1109,7 @@ int imposta_gioco(){
                "\n                                          |2|   Intermedio   |"
                "\n                                          |3|     Incubo     |"
                "\n                                           ------------------"
-               "\n\n\n\n\n\n>");
+               "\n\n\n\n\n>");
         exitCode = scanf("%d", &usrChoice);
         if (exitCode==1 && usrChoice >= 1 && 3 >= usrChoice) {
             //The selection made by the player is actually a valid one
