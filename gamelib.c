@@ -1098,9 +1098,10 @@ int imposta_gioco(){
             valid = true;
         } else {
             //the selection made by the player is either an invalid type or not an option
+            cls();
             color('r');
             valid = false;
-            printf("\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n");
+            printf("\n\n\n\n\n\n\n\n\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n\n");
             scanf("%*[^\n]%*c");
             //This "flushes" the stdin buffer up until the \n
             /* the %*[^\n] part scans the buffer until it finds a \n
