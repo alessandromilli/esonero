@@ -1465,6 +1465,10 @@ int gioca(){
                             case 3:{
                                 // Display current zone data
                                 stampa_zona(giocatori[turni[x]]->posizione);
+                                printf("\n                                        Premere INVIO per continuare");
+                                while ((getchar()) != '\n');
+                                getchar();
+                                cls();
                                 break;
                             }
                             case 4:{
