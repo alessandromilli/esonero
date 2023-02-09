@@ -970,15 +970,15 @@ static int torna_caravan(struct Giocatore* p){
             color('g');
             switch (p->zaino[i]) {
                 case 30:{
-                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con l'EMF!\n");
+                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con l'EMF!\n", p->nome_giocatore);
                     break;
                 }
                 case 31:{
-                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con lo Spirit Box!\n");
+                    printf("\n\n\n\n\n\n\n\n\n%s ha raccolto una prova con lo Spirit Box!\n", p->nome_giocatore);
                     break;
                 }
                 case 32:{
-                    printf("\n\n\n\n\n\n\n\n\n%s ha registrato una prova con la Videocamera\n");
+                    printf("\n\n\n\n\n\n\n\n\n%s ha registrato una prova con la Videocamera\n", p->nome_giocatore);
                     break;
                 }
             }
