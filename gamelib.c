@@ -591,7 +591,7 @@ static int raccogli_oggetto(struct Giocatore* p){
     } else {
         // Current zone hasn't got any items to pick up
         color('r');
-        printf("\n\n\n\n\n\n                       Non c'e' nessun oggetto da raccogliere in questa zona!\n\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n                       Non c'e' nessun oggetto da raccogliere in questa zona!\n\n\n\n\n\n\n\n\n");
         color('w');
         time(&start);
         do time(&end); while(difftime(end, start) <= 1);
@@ -1689,7 +1689,15 @@ int gioca(){
                 if(ghost){
                     // A ghost has spawned
                     if(salt){
-                        printf("\nIl Giocatore aveva usato il sale, il fantasma non ha nessun potere su di lui!\n");
+                        cls();
+                        color('r');
+                        printf("\n\n\n\n\n\n\n\n\n\nIl Giocatore aveva usato il sale, il fantasma non ha nessun potere su di lui!\n\n\n\n\n\n\n\n\n");
+                        usrChoice = 8;
+                        // 1 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 1);
+                        color('w');
+                        cls();
                     } else {
                         if(level < 50){
                             // Dilettante
@@ -1719,7 +1727,15 @@ int gioca(){
                             }
                             // The decrement of the players mental health will be 30 + 5 * (number of picked up evidence)
                         }
-                        printf("\n%s appena visto il Fantasma, da di matto, la sua sanita' mentale scende a %d\n", giocatori[turni[x]]->nome_giocatore, giocatori[turni[x]]->sanita_mentale);
+                        cls();
+                        color('r');
+                        printf("\n\n\n\n\n\n\n\n\n\n%s appena visto il Fantasma, da di matto, la sua sanita' mentale scende a %d\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, giocatori[turni[x]]->sanita_mentale);
+                        usrChoice = 8;
+                        // 1 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 1);
+                        color('w');
+                        cls();
                     }
                     ghost = false;
                 }
@@ -1728,9 +1744,15 @@ int gioca(){
                 }
                 if(giocatori[turni[x]]->sanita_mentale == 0){
                     // The player has just died
-                    printf("\n\n%s (Player %d), e' impazzito e gli spiriti se lo sono preso!", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                    cls();
+                    color('r');
+                    printf("\n\n\n\n\n\n\n\n\n\n%s e' impazzito e gli spiriti se lo sono preso!\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
                     usrChoice = 8;
-
+                    // 1 second sleep
+                    time(&start);
+                    do time(&end); while(difftime(end, start) <= 1);
+                    color('w');
+                    cls();
                 }
             }while(usrChoice != 8);
 
@@ -1753,23 +1775,35 @@ int gioca(){
 
     }while(valid && !won);
     if(won){
-        printf("\n\n"
-               "\n  _____                        __       __         _           _ __"
-               "\n / ___/__  ___  ___ ________ _/ /___ __/ /__ ____ (_)__  ___  (_) /"
-               "\n/ /__/ _ \\/ _ \\/ _ `/ __/ _ `/ __/ // / / _ `/_ // / _ \\/ _ \\/ /_/ "
-               "\n\\___/\\___/_//_/\\_, /_/  \\_,_/\\__/\\_,_/_/\\_,_//__/_/\\___/_//_/_(_)  "
-               "\n              /___/"
-               "\n                    I Giocatori hanno vinto!");
+        cls();
+        color('g');
+        printf("\n\n\n\n\n\n\n"
+               "\n                    _____                        __       __         _           _ __"
+               "\n                   / ___/__  ___  ___ ________ _/ /___ __/ /__ ____ (_)__  ___  (_) /"
+               "\n                  / /__/ _ \\/ _ \\/ _ `/ __/ _ `/ __/ // / / _ `/_ // / _ \\/ _ \\/ /_/ "
+               "\n                 \\___/\\___/_//_/\\_, /_/  \\_,_/\\__/\\_,_/_/\\_,_//__/_/\\___/_//_/_(_)  "
+               "\n                                /___/"
+               "\n                                      I Giocatori hanno vinto!\n\n\n\n\n\n");
+        color('w');
+        time(&start);
+        do time(&end); while(difftime(end, start) <= 1);
+        cls();
     } else if(!valid){
-        printf("\n\n"
-               "\n _______  _______  __   __  _______    _______  __   __  _______  ______   "
-               "\n|       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  "
-               "\n|    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  "
-               "\n|   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ "
-               "\n|   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |"
-               "\n|   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |"
-               "\n|_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|"
-               "\n                      I Giocatori sono impazziti!");
+        cls();
+        color('r');
+        printf("\n\n\n\n\n\n"
+               "\n                _______  _______  __   __  _______    _______  __   __  _______  ______   "
+               "\n               |       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  "
+               "\n               |    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  "
+               "\n               |   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ "
+               "\n               |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |"
+               "\n               |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |"
+               "\n               |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|"
+               "\n                                     I Giocatori sono impazziti!\n\n\n\n\n");
+        color('w');
+        time(&start);
+        do time(&end); while(difftime(end, start) <= 1);
+        cls();
     }
     printf("\n     %s", giocatori[0]->nome_giocatore);
     for (x=1;x<playerNumber;x++) {
@@ -1799,9 +1833,14 @@ int gioca(){
 }
 
 int termina_gioco(){
-    printf("\nPhalsoPhobia - a game in C"
-           "\nCoded by Milli Alessandro"
-           "\n Bye!");
+    cls();
+    color('x');
+    printf("\n\n\n\n\n\n\n\n\n                                       PhalsoPhobia - a game in C"
+           "\n                                        Coded by Milli Alessandro"
+           "\n                                                  Bye!\n\n\n\n\n\n\n\n");
+    // 1 second sleep
+    time(&start);
+    do time(&end); while(difftime(end, start) <= 1);
     return 0;
 }
 
