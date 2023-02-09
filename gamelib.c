@@ -1031,7 +1031,7 @@ int imposta_gioco(){
             // Insert Name
             printf("\n\n\n\n\n\n");
             for (y=0;y<z;y++){
-                printf("\n Player %d, %s", y, giocatori[y]->nome_giocatore);
+                printf("\n Player %d, %s", y+1, giocatori[y]->nome_giocatore);
             }
             for (y=z;y<playerNumber;y++){
                 printf("\n");
@@ -1103,7 +1103,7 @@ int imposta_gioco(){
                "\n                                          |2|   Intermedio   |"
                "\n                                          |3|     Incubo     |"
                "\n                                           ------------------"
-               "\n\n\n\n\n\n>");
+               "\n\n\n\n\nN\n>");
         exitCode = scanf("%d", &usrChoice);
         if (exitCode==1 && usrChoice >= 1 && 3 >= usrChoice) {
             //The selection made by the player is actually a valid one
