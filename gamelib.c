@@ -862,6 +862,7 @@ static int usa_oggetto(struct Giocatore* p){
                     }
                     case 12:{
                         // coltello
+                        color('r');
                         printf("\n\n\n\n\n\n\n\n\n\nHai usato il Coltello, ");
                         if(p->sanita_mentale < 30){
                             for(i=0; i< playerNumber; i++){
@@ -879,13 +880,23 @@ static int usa_oggetto(struct Giocatore* p){
                             }
                             if(!kill){
                                 printf("hai avuto un attacco di rabbia!\nFortunatamente non c'era nessuno nelle vicinanze.\n\n\n\n\n\n\n\n");
+                                // 1 second sleep
+                                time(&start);
+                                do time(&end); while(difftime(end, start) <= 1);
                             } else {
                                 printf("!\n\n\n\n\n\n\n\n\n");
+                                // 1 second sleep
+                                time(&start);
+                                do time(&end); while(difftime(end, start) <= 1);
                             }
                         } else {
                             printf("non succede niente...\n\n\n\n\n\n\n\n");
+                            // 1 second sleep
+                            time(&start);
+                            do time(&end); while(difftime(end, start) <= 1);
                         }
                         p->zaino[usrChoice-1] = (int) nessun_oggetto;
+                        color('w');
                         return 1;
                     }
                     default:{
