@@ -1183,7 +1183,7 @@ int imposta_gioco(){
                     break;
                 }
                 case 99:{
-                    printf("Oggetto gia preso");
+                    printf("    XXX    ");
                     break;
                 }
             }
