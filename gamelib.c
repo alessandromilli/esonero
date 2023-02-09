@@ -449,11 +449,11 @@ static void stampa_zona(struct Zona_mappa *z){
             }
         }
         str_spacer(prova, 17);
-        printf("\n\n                                  ____________________________________"
-               "\n                                 |           -ZONA INIZIALE-          |"
-               "\n                                 |               PROVA:               |"
-               "\n                                 |          %s         |"
-               "\n                                 |____________________________________|\n", prova);
+        printf("\n\n                                    ____________________________________"
+               "\n                                   |           -ZONA INIZIALE-          |"
+               "\n                                   |               PROVA:               |"
+               "\n                                   |          %s         |"
+               "\n                                   |____________________________________|\n", prova);
     }
 }
 
@@ -491,8 +491,8 @@ static void cancella_zona(){
 static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
     cls();
-    printf("\n\n\n\n\n\n--------------------------------------------------------------------------------------------------------"
-           "\n\n\n                                           Stampo Mappa...");
+    printf("\n\n\n\n\n\n-----------------------------------------------------------------------------------------------------------"
+           "\n\n\n                                              Stampo Mappa...");
     do {
         stampa_zona(tmp);
         tmp = tmp->prossima_zona;
