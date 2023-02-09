@@ -482,10 +482,10 @@ static void cancella_zona(){
         }
         tmp_penultima->prossima_zona = pFirst;
         pLast = tmp_penultima;
-        printf("\n\n\n\n                                          Zona Cancellata!\n\n\n\n");
+        printf("\n\n\n\n\n\n                                            Zona Cancellata!\n\n\n\n\n\n\n\n\n");
     } else {
         // Player is trying to delete the only zone, it's not possible
-        printf("\n\n\n\n                       Purtroppo non e' possibile cancellare la zona iniziale!\n\n\n\n");
+        printf("\n\n\n\n\n\n                         Purtroppo non e' possibile cancellare la zona iniziale!\n\n\n\n\n\n\n\n\n");
     }
     color('w');
     printf("\n                                        Premere INVIO per continuare\n");
