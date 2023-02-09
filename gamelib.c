@@ -486,15 +486,22 @@ static void cancella_zona(){
     }
 }
 
+
 static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
-    printf("\n                                           Stampo Mappa...");
+    cls();
+    printf("\n\n\n                                           Stampo Mappa...");
     do {
         stampa_zona(tmp);
         tmp = tmp->prossima_zona;
     } while(tmp != pFirst);
+    printf("\n                                        Premere INVIO per continuare");
+    while ((getchar()) != '\n');
+    getchar();
+    cls();
 }
 
+//DONE
 static int fantasma(){
     /*
      * Level can have the following values:
@@ -524,10 +531,12 @@ static int fantasma(){
                "\n                                             :              `."
                "\n                                              `.              `.     ."
                "\n                                                `'`'`'`---..,___`;.-'");
+        color('r');
         printf("\n                                          E' comparso un fantasma!\n");
-        // 3 second sleep
+        color('w');
+        // 2 second sleep
         time(&start);
-        do time(&end); while(difftime(end, start) <= 3);
+        do time(&end); while(difftime(end, start) <= 2);
         cls();
         return 1;
     } else {
