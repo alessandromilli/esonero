@@ -420,14 +420,14 @@ static void stampa_zona(struct Zona_mappa *z){
         str_spacer(ogg, 11);
         str_spacer(prova, 17);
 
-        printf("\n\n                                  ____________________________________"
-               "\n                                 |           -%s-           |"
-               "\n                                 |                                    |"
-               "\n                                 |              OGGETTO:              |"
-               "\n                                 |             %s            |"
-               "\n                                 |               PROVA:               |"
-               "\n                                 |          %s         |"
-               "\n                                 |____________________________________|\n", zona, ogg, prova);
+        printf("\n\n                                    ____________________________________"
+               "\n                                   |           -%s-           |"
+               "\n                                   |                                    |"
+               "\n                                   |              OGGETTO:              |"
+               "\n                                   |             %s            |"
+               "\n                                   |               PROVA:               |"
+               "\n                                   |          %s         |"
+               "\n                                   |____________________________________|\n", zona, ogg, prova);
     } else {
         char prova[18];
         switch (z->prova) {
@@ -465,7 +465,8 @@ static void inserisci_zona(){
     tmp_zona->oggetto_zona = (enum Tipo_oggetto_zona) genera_ogg_zona();
     tmp_zona->prova = nessuna_prova;
     pLast = tmp_zona;
-    printf("\n                                        Nuova zona Inserita!\n");
+    cls();
+    printf("\n                                          Nuova zona Inserita!\n");
     stampa_zona(pLast);
 }
 
