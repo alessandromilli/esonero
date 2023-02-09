@@ -882,7 +882,7 @@ static int torna_caravan(struct Giocatore* p){
     color('w');
     // 1 second sleep
     time(&start);
-    do time(&end); while(difftime(end, start) <= 5);
+    do time(&end); while(difftime(end, start) <= 1);
 
     for(i=0;i<4;i++){
         // For every position of the player's backpack
@@ -1515,10 +1515,20 @@ int gioca(){
                                 if(adv>0){
                                     avanza(giocatori[turni[x]]);
                                     adv--;
-                                    printf("\n%s avanza!\n", giocatori[turni[x]]->nome_giocatore);
+                                    color('g');
+                                    printf("\n\n\n\n\n\n\n\n\n\n%s avanza alla prossima zona!\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                     decrementa_sanita(giocatori[turni[x]]);
+                                    // 1 second sleep
+                                    time(&start);
+                                    do time(&end); while(difftime(end, start) <= 1);
+                                    color('w');
                                 } else {
-                                    printf("\nNon e' possibile avanzare ulteriormente in questo turno!\n");
+                                    color('r');
+                                    printf("\n\n\n\n\n\n\n\n\n\nNon e' possibile avanzare ulteriormente in questo turno!\n\n\n\n\n\n\n\n\n");
+                                    // 1 second sleep
+                                    time(&start);
+                                    do time(&end); while(difftime(end, start) <= 1);
+                                    color('w');
                                 }
                                 break;
                             }
