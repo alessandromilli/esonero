@@ -1281,12 +1281,15 @@ int imposta_gioco(){
     // Game master's Menu
     do {
         do {
-            printf("\n\n Game Master, e' ora di generare la mappa di Gioco!"
-                   "\n  1)Inserisci una Zona"
-                   "\n  2)Cancella l'ultima zona"
-                   "\n  3)Stampa La Mappa"
-                   "\n  4)Termina e Salva"
-                   "\nLa tua Scelta:");
+            cls();
+            printf("\n\n                           Game Master, e' ora di generare la mappa di Gioco!"
+                   "\n                                 ____________________________"
+                   "\n                                |1|    Inserisci una Zona    |"
+                   "\n                                |2|  Cancella l'ultima zona  |"
+                   "\n                                |3|     Stampa La Mappa      |"
+                   "\n                                |4|     Termina e Salva      |"
+                   "\n                                 ----------------------------"
+                   "\n\n\n>");
             exitCode = scanf("%d", &usrChoice);
 
             if (exitCode==1 && usrChoice >= 1 && usrChoice <= 4) {
