@@ -1571,11 +1571,11 @@ int gioca(){
                                     adv--;
                                     color('g');
                                     printf("\n\n\n\n\n\n\n\n\n\n%s avanza alla prossima zona!\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
-                                    decrementa_sanita(giocatori[turni[x]]);
                                     // 1 second sleep
                                     time(&start);
                                     do time(&end); while(difftime(end, start) <= 1);
                                     color('w');
+                                    decrementa_sanita(giocatori[turni[x]]);
                                 } else {
                                     color('r');
                                     printf("\n\n\n\n\n\n\n\n\n\nNon e' possibile avanzare ulteriormente in questo turno!\n\n\n\n\n\n\n\n\n");
