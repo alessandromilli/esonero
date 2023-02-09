@@ -1247,7 +1247,6 @@ int imposta_gioco(){
             }
             oggetti_iniziali[usrChoice-1] = 99;
         } while (!valid);
-        cls();
     }
 
 
@@ -1322,6 +1321,7 @@ int imposta_gioco(){
         prove_raccolte[x] = nessuna_prova;
     }
     free(oggetti_iniziali);
+    cls();
     return 0;
 }
 
