@@ -729,13 +729,12 @@ static void stampa_zaino(struct Giocatore* p){
         str_spacer(bckpk[z], 17);
     }
     printf("\n                                     _____________________________"
-           "\n                                    |                             |"
            "\n                                    |1|     %s     |"
            "\n                                    |2|     %s     |"
            "\n                                    |3|     %s     |"
            "\n                                    |4|     %s     |"
            "\n                                    |0|           ESCI            |"
-           "\n                                    |_____________________________|", bckpk[0], bckpk[1], bckpk[2], bckpk[3]);
+           "\n                                     -----------------------------", bckpk[0], bckpk[1], bckpk[2], bckpk[3]);
 
 }
 
@@ -750,8 +749,10 @@ static int usa_oggetto(struct Giocatore* p){
     int usrChoice = -1;
     int i;
     bool kill;
+    printf("\n\n                                   Quale oggetto desideri utilizzare?");
     stampa_zaino(p);
-    printf("\n                                   Quale oggetto desideri utilizzare:");
+    cls();
+    printf("\n>");
     do{
         exitCode = scanf("%d", &usrChoice);
         if (exitCode==1 && playerNumber >= 0 && playerNumber <= 4) {
@@ -1458,16 +1459,16 @@ int gioca(){
             do {
                 do {
 
-                    printf("\n\n\n                                    _______________________________"
-                           "\n                                   |1|       Vai Al Caravan        |"
-                           "\n                                   |2| Mostra i dati del Giocatore |"
-                           "\n                                   |3|   Mostra la zona corrente   |"
-                           "\n                                   |4|  Avanza alla prossima zona  |"
-                           "\n                                   |5|      Raccogli la prova      |"
-                           "\n                                   |6|      Raccogli l'oggetto     |"
-                           "\n                                   |7|        Usa un Oggetto       |"
-                           "\n                                   |8|            Passa            |"
-                           "\n                                    -------------------------------"
+                    printf("\n\n\n                                     _______________________________"
+                           "\n                                    |1|       Vai Al Caravan        |"
+                           "\n                                    |2| Mostra i dati del Giocatore |"
+                           "\n                                    |3|   Mostra la zona corrente   |"
+                           "\n                                    |4|  Avanza alla prossima zona  |"
+                           "\n                                    |5|      Raccogli la prova      |"
+                           "\n                                    |6|      Raccogli l'oggetto     |"
+                           "\n                                    |7|        Usa un Oggetto       |"
+                           "\n                                    |8|            Passa            |"
+                           "\n                                     -------------------------------"
                            "\n\n\n\n\n>");
                     exitCode = scanf("%d", &usrChoice);
 
@@ -1491,9 +1492,9 @@ int gioca(){
                                 color('g');
                                 printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                 color('w');
-                                // 2 second sleep
+                                // 1 second sleep
                                 time(&start);
-                                do time(&end); while(difftime(end, start) <= 2);
+                                do time(&end); while(difftime(end, start) <= 1);
                                 break;
                             }
                             case 2:{
@@ -1544,7 +1545,12 @@ int gioca(){
                             }
                             case 6:{
                                 if(giocatori[turni[x]]->posizione == pFirst){
-                                    printf("\nNon ci sono oggetti nella zona Iniziale!\n");
+                                    color('r');
+                                    printf("\n\n\n\n\n\n\n\n\n\n                                Non ci sono oggetti nella zona Iniziale!\n\n\n\n\n\n\n\n\nn");
+                                    color('w');
+                                    // 1 second sleep
+                                    time(&start);
+                                    do time(&end); while(difftime(end, start) <= 1);
                                 } else {
                                     if(raccogli_oggetto(giocatori[turni[x]]) == 1){
                                         decrementa_sanita(giocatori[turni[x]]);
@@ -1572,9 +1578,9 @@ int gioca(){
                                 color('g');
                                 printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                 color('w');
-                                // 2 second sleep
+                                // 1 second sleep
                                 time(&start);
-                                do time(&end); while(difftime(end, start) <= 2);
+                                do time(&end); while(difftime(end, start) <= 1);
                                 break;
                             }
                             default:{
