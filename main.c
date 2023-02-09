@@ -49,7 +49,8 @@ int main() {
             // Cyan
             break;
     }
-    printf("\n\n\n");
+    printf("\e[1;1H\e[2J");
+    printf("\n\n\n\n\n\n");
     switch (rand() % 5) {
         case 0:
             printf("\n"
