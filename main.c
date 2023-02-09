@@ -142,7 +142,7 @@ int main() {
                    "                                         |2|       Play      |\n"
                    "                                         |3|       Esci      |\n"
                    "                                          -------------------\n\n"
-                   "\n\n\n\n\nYour Choice>");
+                   "\n\n\n\n\n\nYour Choice>");
             exitCode = scanf("%d", &usrChoice);
             scanf("%*[^\n]%*c");
             //This "flushes" the stdin buffer up until the \n
