@@ -1006,10 +1006,7 @@ static int torna_caravan(struct Giocatore* p){
                 color('r');
                 printf("\nUna prova identica era gia' stata trovata, %s la butta nel secchio", p->nome_giocatore);
             }
-            cls();
-            // 1 second sleep
-            time(&start);
-            do time(&end); while(difftime(end, start) <= 1);
+
             p->zaino[i]=nessun_oggetto;
             tof= true;
             alr_dep = false;
@@ -1064,6 +1061,10 @@ static int torna_caravan(struct Giocatore* p){
             }
         }
     }
+    // 1 second sleep
+    time(&start);
+    do time(&end); while(difftime(end, start) <= 1);
+    cls();
     p->posizione = pFirst;
     return ret;
 }
