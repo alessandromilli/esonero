@@ -1129,17 +1129,13 @@ int imposta_gioco(){
                     color('r');
                     valid = false;
                     printf("\n\n\n\n\n\n\n\n\n\n                              AN UNEXPECTED ERROR OCCURED, INSERT AGAIN!\n\n\n\n\n\n\n\n\n");
-                    scanf("%*[^\n]%*c");
-                    //This "flushes" the stdin buffer up until the \n
-                    /* the %*[^\n] part scans the buffer until it finds a \n
-                     * the * part discards whatever was just scanned
-                     * The %*c scans and discards the \n left by the first part
-                     * */
-                    // 2 second sleep
+                    while ((getchar()) != '\n');
+                    // 1 second sleep
                     time(&start);
-                    do time(&end); while(difftime(end, start) <= 2);
-                    color('w');
+                    do time(&end); while(difftime(end, start) <= 1);
                     cls();
+                    color('w');
+
 
                 } else {
                     valid = true;

@@ -130,9 +130,8 @@ int main() {
     // 2 second sleep
     time_t start, end;
     time(&start);
-    do time(&end); while(difftime(end, start) <= 2);
+    do time(&end); while(difftime(end, start) <= 1);
     printf("\e[1;1H\e[2J");
-
 
     printf("\033[0;37m");
     do {
@@ -162,7 +161,7 @@ int main() {
                 printf("\033[0;31m");
                 printf("\n\n\n\n\n\n\n\n\n                             AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n");
                 time(&start);
-                do time(&end); while(difftime(end, start) <= 2);
+                do time(&end); while(difftime(end, start) <= 1);
                 printf("\033[0;37m");
                 printf("\e[1;1H\e[2J");
             }
@@ -182,7 +181,7 @@ int main() {
                     printf("\033[0;31m");
                     printf("\n\n\n\n\n\n\n\n\n                            You have to set the game before you can play!\n\n\n\n\n\n\n\n");
                     time(&start);
-                    do time(&end); while(difftime(end, start) <= 2);
+                    do time(&end); while(difftime(end, start) <= 1);
                     printf("\033[0;37m");
                     printf("\e[1;1H\e[2J");
                 }
@@ -198,7 +197,7 @@ int main() {
                 printf("\033[0;31m");
                 printf("\n\n\n\n\n\n\n\n\n                                Some Unknown Error Happened, Try Again\n\n\n\n\n\n\n\n");
                 time(&start);
-                do time(&end); while(difftime(end, start) <= 2);
+                do time(&end); while(difftime(end, start) <= 1);
                 printf("\033[0;37m");
                 printf("\e[1;1H\e[2J");
                 break;
