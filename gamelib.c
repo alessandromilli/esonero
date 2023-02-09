@@ -969,15 +969,15 @@ static int torna_caravan(struct Giocatore* p){
             // Check if the i-th element of the Player is a piece of evidence
             switch (p->zaino[i]) {
                 case 30:{
-                    printf("\n\n\n\n                                    Ha raccolto una prova con l'EMF!");
+                    printf("\n\n\n\n\n\n\n\n\n                                    Ha raccolto una prova con l'EMF!");
                     break;
                 }
                 case 31:{
-                    printf("\n\n\n\n                                Ha raccolto una prova con lo Spirit Box!");
+                    printf("\n\n\n\n\n\n\n\n\n                                Ha raccolto una prova con lo Spirit Box!");
                     break;
                 }
                 case 32:{
-                    printf("\n\n\n\n                               Ha registrato una prova con la Videocamera");
+                    printf("\n\n\n\n\n\n\n\n\n                               Ha registrato una prova con la Videocamera");
                     break;
                 }
             }
@@ -1029,7 +1029,7 @@ static int torna_caravan(struct Giocatore* p){
         printf("\nQuesta era l'ultima prova!\n\n\n\n");
     } else if (ret == -1){
         color('r');
-        printf("\n\n\n\n%s non ha prove da depositare, beve un caffe'!\n\n\n\n", p->nome_giocatore);
+        printf("\n\n\n\n\n\n\n\n\n\n%s non ha prove da depositare, beve un caffe'!\n\n\n\n\n\n\n\n\n", p->nome_giocatore);
     } else if (tof){
         //At least one piece of evidence is yet to be found
         for (x = 0; x < 4; x++) {
@@ -1041,15 +1041,15 @@ static int torna_caravan(struct Giocatore* p){
                         p->zaino[x] = i;
                         switch (i) {
                             case 0:{
-                                printf("\n%s in un cassetto del Caravan trova un EMF e lo raccoglie\n\n\n\n", p->nome_giocatore);
+                                printf("\n%s in un cassetto del Caravan trova un EMF e lo raccoglie\n\n\n\n\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                             case 1:{
-                                printf("\n%s per terra davanti al Caravan trova uno Spirit Box e lo raccoglie\n\n\n\n", p->nome_giocatore);
+                                printf("\n%s per terra davanti al Caravan trova uno Spirit Box e lo raccoglie\n\n\n\n\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                             case 2:{
-                                printf("\n%s in un ripiano del Caravan trova una videocamera e la raccoglie\n\n\n\n", p->nome_giocatore);
+                                printf("\n%s in un ripiano del Caravan trova una videocamera e la raccoglie\n\n\n\n\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                         }
