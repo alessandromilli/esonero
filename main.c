@@ -22,7 +22,24 @@ int main() {
     //Purple \033[0;35m
     //Cyan \033[0;36m
     //White \033[0;37m
-
+    printf("\n---------------------------------------------------------------------------------------------------------"
+           "\n|                                                                                                    __  |"
+           "\n|                                                                                                     /| |"
+           "\n|                                                                                                    /   |"
+           "\n|                                                                                                   /    |"
+           "\n|                                                                                                  /     |"
+           "\n|                                                                                                QUI     |"
+           "\n|                                                                                                        |"
+           "\n|                                                                                                        |"
+           "\n|              Modificare la finestra cosi' da renderla della stessa misura del rettangolo               |"
+           "\n|                                                                                                        |"
+           "\n|                                    Poi premere INVIO per continuare                                    |"
+           "\n|                                                                                                        |"
+           "\n|                                                                                                        |"
+           "\n|                                                                                                        |"
+           "\n|                                                                                                        |"
+           "\n|                                                                                                        |"
+           "\n|________________________________________________________________________________________________________|");
     switch (rand() % 6) {
         case 0:
             printf("\033[0;31m");
@@ -128,7 +145,7 @@ int main() {
                    "                                       |3|    Istruzioni   |\n"
                    "                                       |4|       Esci      |\n"
                    "                                        -------------------\n\n"
-                   "\n\n\nYour Choice>");
+                   "\n\n\n\n\nYour Choice>");
             exitCode = scanf("%d", &usrChoice);
             scanf("%*[^\n]%*c");
             //This "flushes" the stdin buffer up until the \n

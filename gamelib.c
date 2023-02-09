@@ -969,24 +969,7 @@ int imposta_gioco(){
     int usrChoice = -1;
     level = 0;
 
-    printf("\n-----------------------------------------------------------------------------------------------------------"
-           "\n|                                                                                                      __  |"
-           "\n|                                                                                                       /| |"
-           "\n|                                                                                                      /   |"
-           "\n|                                                                                                     /    |"
-           "\n|                                                                                                    /     |"
-           "\n|                                                                                                  QUI     |"
-           "\n|                                                                                                          |"
-           "\n|                                                                                                          |"
-           "\n|               Modificare la finestra cosi' da renderla della stessa misura del rettangolo                |"
-           "\n|                                                                                                          |"
-           "\n|                                    Poi premere INVIO per continuare                                      |"
-           "\n|                                                                                                          |"
-           "\n|                                                                                                          |"
-           "\n|                                                                                                          |"
-           "\n|                                                                                                          |"
-           "\n|                                                                                                          |"
-           "\n|__________________________________________________________________________________________________________|");
+
     while(getchar()!='\n');
     getchar();
     do {
