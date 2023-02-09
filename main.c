@@ -109,7 +109,7 @@ int main() {
                    "    ░░        ░  ░░ ░  ░   ▒     ░ ░   ░  ░  ░  ░ ░ ░ ▒  ░░        ░  ░░ ░░ ░ ░ ▒   ░    ░  ▒ ░  ░   ▒    \n"
                    "              ░  ░  ░      ░  ░    ░  ░      ░      ░ ░            ░  ░  ░    ░ ░   ░       ░        ░  ░ \n"
                    "                                                                                         ░                \n"
-                   "                                              a game in C\n\n\n\n");
+                   "                                              a game in C\n\n\n");
             break;
         case 4:
             printf("\n\n\n\n\n"
