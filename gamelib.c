@@ -546,9 +546,9 @@ static int fantasma(){
         color('r');
         printf("\n\n                                          E' comparso un fantasma!\n");
         color('w');
-        // 2 second sleep
+        // 1 second sleep
         time(&start);
-        do time(&end); while(difftime(end, start) <= 2);
+        do time(&end); while(difftime(end, start) <= 1);
         cls();
         return 1;
     } else {
@@ -575,7 +575,7 @@ static int raccogli_oggetto(struct Giocatore* p){
             printf("\n\n\n\n\n\n                   Non e' stato possibile raccogliere l'oggetto, lo zaino e' pieno!\n\n\n\n\n\n\n\n\n");
             color('w');
             time(&start);
-            do time(&end); while(difftime(end, start) <= 0.5);
+            do time(&end); while(difftime(end, start) <= 1);
             return -1;
         } else {
             // The item has been picked up correctly
@@ -583,7 +583,7 @@ static int raccogli_oggetto(struct Giocatore* p){
             printf("\n\n\n\n\n\n                                      Hai raccolto l'oggetto!\n\n\n\n\n\n\n\n\n");
             color('w');
             time(&start);
-            do time(&end); while(difftime(end, start) <= 0.5);
+            do time(&end); while(difftime(end, start) <= 1);
             return 1;
         }
     } else {
@@ -592,7 +592,7 @@ static int raccogli_oggetto(struct Giocatore* p){
         printf("\n                       Non c'e' nessun oggetto da raccogliere in questa zona!\n");
         color('w');
         time(&start);
-        do time(&end); while(difftime(end, start) <= 0.5);
+        do time(&end); while(difftime(end, start) <= 1);
         return 0;
     }
 }
@@ -908,9 +908,9 @@ static int usa_oggetto(struct Giocatore* p){
              * the * part discards whatever was just scanned
              * The %*c scans and discards the \n left by the first part
              * */
-            // 2 second sleep
+            // 1 second sleep
             time(&start);
-            do time(&end); while(difftime(end, start) <= 2);
+            do time(&end); while(difftime(end, start) <= 1);
             color('w');
             cls();
             return -1;
@@ -1104,9 +1104,9 @@ int imposta_gioco(){
              * the * part discards whatever was just scanned
              * The %*c scans and discards the \n left by the first part
              * */
-            // 2 second sleep
+            // 1 second sleep
             time(&start);
-            do time(&end); while(difftime(end, start) <= 2);
+            do time(&end); while(difftime(end, start) <= 1);
             color('w');
             cls();
         }
@@ -1228,9 +1228,9 @@ int imposta_gioco(){
              * the * part discards whatever was just scanned
              * The %*c scans and discards the \n left by the first part
              * */
-            // 2 second sleep
+            // 1 second sleep
             time(&start);
-            do time(&end); while(difftime(end, start) <= 2);
+            do time(&end); while(difftime(end, start) <= 1);
             color('w');
             cls();
         }
@@ -1353,9 +1353,9 @@ int imposta_gioco(){
                          * the * part discards whatever was just scanned
                          * The %*c scans and discards the \n left by the first part
                          * */
-                        // 2 second sleep
+                        // 1 second sleep
                         time(&start);
-                        do time(&end); while(difftime(end, start) <= 2);
+                        do time(&end); while(difftime(end, start) <= 1);
                         color('w');
                         cls();
                         break;
@@ -1374,9 +1374,9 @@ int imposta_gioco(){
                  * the * part discards whatever was just scanned
                  * The %*c scans and discards the \n left by the first part
                  * */
-                // 2 second sleep
+                // 1 second sleep
                 time(&start);
-                do time(&end); while(difftime(end, start) <= 2);
+                do time(&end); while(difftime(end, start) <= 1);
                 color('w');
                 cls();
             }
@@ -1441,9 +1441,9 @@ int imposta_gioco(){
                  * the * part discards whatever was just scanned
                  * The %*c scans and discards the \n left by the first part
                  * */
-                // 2 second sleep
+                // 1 second sleep
                 time(&start);
-                do time(&end); while(difftime(end, start) <= 2);
+                do time(&end); while(difftime(end, start) <= 1);
                 color('w');
                 cls();
                 usrChoice = -1;
@@ -1454,9 +1454,9 @@ int imposta_gioco(){
             cls();
             color('r');
             printf("\n\n\n\n\n\n\n\n\n\n           Non e' possibile giocare solamente nella zona iniziale, inseriscine almeno un'altra\n\n\n\n\n\n\n\n\n");
-            // 2 second sleep
+            // 1 second sleep
             time(&start);
-            do time(&end); while(difftime(end, start) <= 2);
+            do time(&end); while(difftime(end, start) <= 1);
             color('w');
             cls();
             usrChoice = 0;
@@ -1655,9 +1655,9 @@ int gioca(){
                                  * the * part discards whatever was just scanned
                                  * The %*c scans and discards the \n left by the first part
                                  * */
-                                // 2 second sleep
+                                // 1 second sleep
                                 time(&start);
-                                do time(&end); while(difftime(end, start) <= 2);
+                                do time(&end); while(difftime(end, start) <= 1);
                                 color('w');
                                 cls();
                                 usrChoice = -1;
@@ -1675,9 +1675,9 @@ int gioca(){
                          * the * part discards whatever was just scanned
                          * The %*c scans and discards the \n left by the first part
                          * */
-                        // 2 second sleep
+                        // 1 second sleep
                         time(&start);
-                        do time(&end); while(difftime(end, start) <= 2);
+                        do time(&end); while(difftime(end, start) <= 1);
                         color('w');
                         cls();
                         usrChoice = -1;
