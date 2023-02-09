@@ -870,6 +870,7 @@ static int torna_caravan(struct Giocatore* p){
     alr_dep = false;
     tof= false;
     cls();
+    color('x');
     printf("\n\n"
            "\n                                             ______________"
            "\n                                            /      __      \\"
@@ -877,7 +878,7 @@ static int torna_caravan(struct Giocatore* p){
            "\n                                           |      | .| |__| |"
            "\n                                           | ___  |  | ___  |"
            "\n                                           [( * )_|__|( * );]");
-    color('x');
+
     printf("\n\n                                              CARAVAN...");
     color('w');
     // 1 second sleep
@@ -1489,7 +1490,7 @@ int gioca(){
                                 usrChoice = 8;
                                 cls();
                                 color('b');
-                                printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                                printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                 color('w');
                                 // 2 second sleep
                                 time(&start);
@@ -1560,7 +1561,7 @@ int gioca(){
                             case 8:{
                                 cls();
                                 color('b');
-                                printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                                printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                                 color('w');
                                 // 2 second sleep
                                 time(&start);
