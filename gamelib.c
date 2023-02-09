@@ -239,6 +239,7 @@ static int genera_ogg_iniziale(){
     }
 }
 
+//DONE
 static void stampa_giocatore(struct Giocatore* p){
 
     int z;
@@ -343,6 +344,7 @@ static void stampa_giocatore(struct Giocatore* p){
     cls();
 }
 
+//DONE
 static void stampa_zona(struct Zona_mappa *z){
     if(z != pFirst){
         char zona[13];
@@ -457,6 +459,7 @@ static void stampa_zona(struct Zona_mappa *z){
     }
 }
 
+//DONE
 static void inserisci_zona(){
     struct Zona_mappa* tmp_zona = malloc(sizeof(struct Zona_mappa));
     pLast->prossima_zona = tmp_zona;
@@ -470,6 +473,7 @@ static void inserisci_zona(){
     stampa_zona(pLast);
 }
 
+//DONE
 static void cancella_zona(){
     // Check if it isn't the only zone
     cls();
@@ -482,10 +486,10 @@ static void cancella_zona(){
         }
         tmp_penultima->prossima_zona = pFirst;
         pLast = tmp_penultima;
-        printf("\n\n\n\n\n\n                                            Zona Cancellata!\n\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n                                              Zona Cancellata!\n\n\n\n\n\n\n\n\n");
     } else {
         // Player is trying to delete the only zone, it's not possible
-        printf("\n\n\n\n\n\n                         Purtroppo non e' possibile cancellare la zona iniziale!\n\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n                           Purtroppo non e' possibile cancellare la zona iniziale!\n\n\n\n\n\n\n\n\n");
     }
     color('w');
     printf("\n                                        Premere INVIO per continuare\n");
@@ -494,10 +498,12 @@ static void cancella_zona(){
     cls();
 }
 
+//DONE
 static void stampa_mappa(){
     struct Zona_mappa* tmp = pFirst;
+    printf("\n\n\n\n\n\n\n\n\n");
     cls();
-    printf("\n\n\n\n\n\n----------------------------------------------------------------------------------------------------------"
+    printf("----------------------------------------------------------------------------------------------------------"
            "\n\n\n                                              Stampo Mappa...");
     do {
         stampa_zona(tmp);
