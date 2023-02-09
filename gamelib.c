@@ -970,8 +970,7 @@ int imposta_gioco(){
     level = 0;
 
 
-    while(getchar()!='\n');
-    getchar();
+
     do {
         cls();
         printf("\n\n\n\n\n\n\n                                        Insert the number of players"
