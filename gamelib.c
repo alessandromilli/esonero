@@ -1029,7 +1029,7 @@ int imposta_gioco(){
             // Insert Name
             printf("\n\n\n\n\n\n");
             for (y=0;y<z;y++){
-                printf("\n Player %d, %s", y+1, giocatori[y]->nome_giocatore);
+                printf("\nPlayer %d, %s", y+1, giocatori[y]->nome_giocatore);
             }
             for (y=z;y<playerNumber;y++){
                 printf("\n");
@@ -1044,7 +1044,7 @@ int imposta_gioco(){
 
                 }
 
-                printf("\nPlayer %d, Insert Your Name:", z+1);
+                printf("\nPlayer %d, Insert Your Name>", z+1);
 
                 fgets(giocatori[z]->nome_giocatore, 64, stdin);
                 // fgets reads up to and including a /n, which I have to remove
@@ -1057,13 +1057,25 @@ int imposta_gioco(){
                 }
                 if (giocatori[z]->nome_giocatore[0] == 0 || giocatori[z]->nome_giocatore[0] == 10) {
                     // String is either empty or just made of an \n
+                    cls();
+                    color('r');
                     valid = false;
-                    printf("\nAN UNEXPECTED ERROR OCCURED, INSERT AGAIN\n");
+                    printf("\n\n\n\n\n\n\n\n\n\n                              AN UNEXPECTED ERROR OCCURED, INSERT AGAIN!\n\n\n\n\n\n\n\n\n");
                     scanf("%*[^\n]%*c");
+                    //This "flushes" the stdin buffer up until the \n
+                    /* the %*[^\n] part scans the buffer until it finds a \n
+                     * the * part discards whatever was just scanned
+                     * The %*c scans and discards the \n left by the first part
+                     * */
+                    // 2 second sleep
+                    time(&start);
+                    do time(&end); while(difftime(end, start) <= 2);
+                    color('w');
+                    cls();
 
                 } else {
                     valid = true;
-                    printf("\nYour name is is: \"%s\", press ENTER to Continue:", giocatori[z]->nome_giocatore);
+                    printf("\nYour name is is: \"%s\", press ENTER to Continue>", giocatori[z]->nome_giocatore);
                     scanf("%*[^\n]%*c");
 
                     //This "flushes" the stdin buffer up until the \n
@@ -1283,12 +1295,12 @@ int imposta_gioco(){
         do {
             cls();
             printf("\n\n\n\n                           Game Master, e' ora di generare la mappa di Gioco!"
-                   "\n\n                                 ____________________________"
-                   "\n                                |1|    Inserisci una Zona    |"
-                   "\n                                |2|  Cancella l'ultima zona  |"
-                   "\n                                |3|     Stampa La Mappa      |"
-                   "\n                                |4|     Termina e Salva      |"
-                   "\n                                 ----------------------------"
+                   "\n\n                                    ____________________________"
+                   "\n                                   |1|    Inserisci una Zona    |"
+                   "\n                                   |2|  Cancella l'ultima zona  |"
+                   "\n                                   |3|     Stampa La Mappa      |"
+                   "\n                                   |4|     Termina e Salva      |"
+                   "\n                                    ----------------------------"
                    "\n\n\n\n\n\n>");
             exitCode = scanf("%d", &usrChoice);
 
@@ -1337,7 +1349,14 @@ int imposta_gioco(){
 
         } while (!valid);
         if(pLast->prossima_zona == pFirst->prossima_zona && usrChoice == 4){
-            printf("\nNon e' possibile giocare solamente nella zona iniziale, inseriscine almeno un'altra\n");
+            cls();
+            color('r');
+            printf("\n\n\n\n\n\n\n\n\n\n           Non e' possibile giocare solamente nella zona iniziale, inseriscine almeno un'altra\n\n\n\n\n\n\n\n\n");
+            // 2 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 2);
+            color('w');
+            cls();
             usrChoice = 0;
         }
     }while(usrChoice != 4);
