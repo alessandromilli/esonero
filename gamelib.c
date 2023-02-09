@@ -749,10 +749,10 @@ static int usa_oggetto(struct Giocatore* p){
     int usrChoice = -1;
     int i;
     bool kill;
-    printf("\n\n                                   Quale oggetto desideri utilizzare?");
-    stampa_zaino(p);
     cls();
-    printf("\n>");
+    printf("\n\n                                   Quale oggetto desideri utilizzare?\n");
+    stampa_zaino(p);
+    printf("\n\n\n\n\n>");
     do{
         exitCode = scanf("%d", &usrChoice);
         if (exitCode==1 && playerNumber >= 0 && playerNumber <= 4) {
