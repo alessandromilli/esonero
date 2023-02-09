@@ -1023,7 +1023,6 @@ int imposta_gioco(){
     pFirst->prova = nessuna_prova;
 
     // Cleans Up buffer for the fgets after the scanf (which leaves an /n)
-    while ((getchar()) != '\n');
     cls();
     for(z=0; z<4;z++){
         if(z<playerNumber){
@@ -1042,6 +1041,7 @@ int imposta_gioco(){
             }
             printf("\n\n\n\n\n\n\n");
             do {
+                while ((getchar()) != '\n');
                 for (x=0;x<z;x++) {
 
                 }
