@@ -804,6 +804,7 @@ static int usa_oggetto(struct Giocatore* p){
                     default:{
                         printf("\nNon e' possibile usare l'oggetto selezionato!\n");
                         usrChoice = -1;
+                        return -1;
                     }
                 }
             }
@@ -1516,7 +1517,9 @@ int gioca(){
                     }
                     ghost = false;
                 }
-                salt = false;
+                if(usrChoice == 8){
+                    salt = false;
+                }
                 if(giocatori[turni[x]]->sanita_mentale == 0){
                     // The player has just died
                     printf("\n\n%s (Player %d), e' impazzito e gli spiriti se lo sono preso!", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
