@@ -130,7 +130,7 @@ int main() {
     // 2 second sleep
     time_t start, end;
     time(&start);
-    do time(&end); while(difftime(end, start) <= 20);
+    do time(&end); while(difftime(end, start) <= 2);
     printf("\e[1;1H\e[2J");
 
 
@@ -158,7 +158,12 @@ int main() {
             } else {
                 //the selection made by the user is either an invalid type or not an option
                 valid = false;
-                printf("\n\n                            AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                printf("\033[0;31m");
+                printf("\n\n                             AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                time(&start);
+                do time(&end); while(difftime(end, start) <= 2);
+                printf("\033[0;37m");
+                printf("\e[1;1H\e[2J");
             }
         } while (!valid);
 
@@ -172,7 +177,12 @@ int main() {
                     gioca();
                     set = false;
                 } else {
+                    printf("\033[0;31m");
                     printf("\n                            You have to set the game before you can play!\n");
+                    time(&start);
+                    do time(&end); while(difftime(end, start) <= 2);
+                    printf("\033[0;37m");
+                    printf("\e[1;1H\e[2J");
                 }
                 break;
             case 3:
@@ -182,7 +192,12 @@ int main() {
                 termina_gioco();
                 break;
             default:
+                printf("\033[0;31m");
                 printf("\n                                Some Unknown Error Happened, Try Again\n");
+                time(&start);
+                do time(&end); while(difftime(end, start) <= 2);
+                printf("\033[0;37m");
+                printf("\e[1;1H\e[2J");
                 break;
 
         }
