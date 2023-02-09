@@ -140,8 +140,7 @@ int main() {
                    "                                          ___________________\n"
                    "                                         |1|     Set Game    |\n"
                    "                                         |2|       Play      |\n"
-                   "                                         |3|    Istruzioni   |\n"
-                   "                                         |4|       Esci      |\n"
+                   "                                         |3|       Esci      |\n"
                    "                                          -------------------\n\n"
                    "\n\n\n\n\nYour Choice>");
             exitCode = scanf("%d", &usrChoice);
@@ -151,7 +150,7 @@ int main() {
              * the * part discards whatever was just scanned
              * The %*c scans and discards the \n left by the first part
              * */
-            if (exitCode==1 && usrChoice >= 1 && usrChoice <= 4) {
+            if (exitCode==1 && usrChoice >= 1 && usrChoice <= 3) {
                 //The selection made by the user is actually a valid one
                 valid = true;
             } else {
@@ -187,9 +186,6 @@ int main() {
                 }
                 break;
             case 3:
-                istruzioni();
-                break;
-            case 4:
                 termina_gioco();
                 break;
             default:
@@ -204,6 +200,6 @@ int main() {
 
         }
 
-    } while (usrChoice != 4);
+    } while (usrChoice != 3);
     return 0;
 }

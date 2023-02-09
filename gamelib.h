@@ -20,4 +20,3 @@ struct Zona_mappa{
 int imposta_gioco();
 int gioca();
 int termina_gioco();
-void istruzioni();

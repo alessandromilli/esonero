@@ -15,7 +15,7 @@ int level;
 struct Zona_mappa* zona_caravan;
 enum Tipo_prova prove_raccolte[3];
 time_t start, end;
-//--------------------------------------------------------------------------------------------------------
+
 static void color(char c){
     switch (c) {
         case 'r':
@@ -951,22 +951,22 @@ static int torna_caravan(struct Giocatore* p){
     // 1 second sleep
     time(&start);
     do time(&end); while(difftime(end, start) <= 1);
-
+    cls();
     for(i=0;i<4;i++){
         // For every position of the player's backpack
         if(p->zaino[i] >= 30 && p->zaino[i] <= 32){
             // Check if the i-th element of the Player is a piece of evidence
             switch (p->zaino[i]) {
                 case 30:{
-                    printf("\nHa raccolto una prova con l'EMF!");
+                    printf("\n                                    Ha raccolto una prova con l'EMF!");
                     break;
                 }
                 case 31:{
-                    printf("\nHa raccolto una prova con lo Spirit Box!");
+                    printf("\n                                Ha raccolto una prova con lo Spirit Box!");
                     break;
                 }
                 case 32:{
-                    printf("\nHa registrato una prova con la Videocamera");
+                    printf("\n                               Ha registrato una prova con la Videocamera");
                     break;
                 }
             }
@@ -985,14 +985,21 @@ static int torna_caravan(struct Giocatore* p){
                     if(prove_raccolte[x] == nessuna_prova){
                         prove_raccolte[x] = p->zaino[i];
                         ret = 0;
+                        color('g');
                         printf("\nLa prova viene lasciata nel Caravan per essere analizzata!");
                         level += 5;
                         break;
                     }
                 }
             } else {
+                color('r');
                 printf("\nUna prova identica era gia' stata trovata, %s la butta nel secchio", p->nome_giocatore);
             }
+            cls();
+            color('w');
+            // 1 second sleep
+            time(&start);
+            do time(&end); while(difftime(end, start) <= 1);
             p->zaino[i]=nessun_oggetto;
             tof= true;
             alr_dep = false;
@@ -1005,7 +1012,6 @@ static int torna_caravan(struct Giocatore* p){
         if(prove_raccolte[i] == nessuna_prova){
             // There is at least one piece of evidence that has yet to be "deposited"
             all_dep = false;
-            ret = 0;
             break;
         }
     }
@@ -1842,8 +1848,4 @@ int termina_gioco(){
     time(&start);
     do time(&end); while(difftime(end, start) <= 1);
     return 0;
-}
-
-void istruzioni(){
-
 }
