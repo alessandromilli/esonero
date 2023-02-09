@@ -158,6 +158,7 @@ int main() {
             } else {
                 //the selection made by the user is either an invalid type or not an option
                 valid = false;
+                printf("\e[1;1H\e[2J");
                 printf("\033[0;31m");
                 printf("\n\n                             AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
                 time(&start);
@@ -177,6 +178,7 @@ int main() {
                     gioca();
                     set = false;
                 } else {
+                    printf("\e[1;1H\e[2J");
                     printf("\033[0;31m");
                     printf("\n                            You have to set the game before you can play!\n");
                     time(&start);
@@ -192,6 +194,7 @@ int main() {
                 termina_gioco();
                 break;
             default:
+                printf("\e[1;1H\e[2J");
                 printf("\033[0;31m");
                 printf("\n                                Some Unknown Error Happened, Try Again\n");
                 time(&start);
