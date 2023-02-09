@@ -160,7 +160,7 @@ int main() {
                 valid = false;
                 printf("\e[1;1H\e[2J");
                 printf("\033[0;31m");
-                printf("\n\n                             AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n");
+                printf("\n\n\n\n\n\n\n\n\n                             AN UNEXPECTED ERROR OCCURED, PLEASE TRY AGAIN!\n\n\n\n\n\n\n\n");
                 time(&start);
                 do time(&end); while(difftime(end, start) <= 2);
                 printf("\033[0;37m");
