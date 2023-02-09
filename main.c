@@ -180,7 +180,7 @@ int main() {
                 } else {
                     printf("\e[1;1H\e[2J");
                     printf("\033[0;31m");
-                    printf("\n                            You have to set the game before you can play!\n");
+                    printf("\n\n\n\n\n\n\n\n\n                            You have to set the game before you can play!\n\n\n\n\n\n\n\n");
                     time(&start);
                     do time(&end); while(difftime(end, start) <= 2);
                     printf("\033[0;37m");
@@ -196,7 +196,7 @@ int main() {
             default:
                 printf("\e[1;1H\e[2J");
                 printf("\033[0;31m");
-                printf("\n                                Some Unknown Error Happened, Try Again\n");
+                printf("\n\n\n\n\n\n\n\n\n                                Some Unknown Error Happened, Try Again\n\n\n\n\n\n\n\n");
                 time(&start);
                 do time(&end); while(difftime(end, start) <= 2);
                 printf("\033[0;37m");
