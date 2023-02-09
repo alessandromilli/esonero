@@ -969,15 +969,15 @@ static int torna_caravan(struct Giocatore* p){
             // Check if the i-th element of the Player is a piece of evidence
             switch (p->zaino[i]) {
                 case 30:{
-                    printf("\n\n\n                                    Ha raccolto una prova con l'EMF!");
+                    printf("\n\n\n\n                                    Ha raccolto una prova con l'EMF!");
                     break;
                 }
                 case 31:{
-                    printf("\n\n\n                                Ha raccolto una prova con lo Spirit Box!");
+                    printf("\n\n\n\n                                Ha raccolto una prova con lo Spirit Box!");
                     break;
                 }
                 case 32:{
-                    printf("\n\n\n                               Ha registrato una prova con la Videocamera");
+                    printf("\n\n\n\n                               Ha registrato una prova con la Videocamera");
                     break;
                 }
             }
@@ -997,14 +997,14 @@ static int torna_caravan(struct Giocatore* p){
                         prove_raccolte[x] = p->zaino[i];
                         ret = 0;
                         color('g');
-                        printf("\nLa prova viene lasciata nel Caravan per essere analizzata!");
+                        printf("\nLa prova viene lasciata nel Caravan per essere analizzata!\n");
                         level += 5;
                         break;
                     }
                 }
             } else {
                 color('r');
-                printf("\nUna prova identica era gia' stata trovata, %s la butta nel secchio", p->nome_giocatore);
+                printf("\nUna prova identica era gia' stata trovata, %s la butta nel secchio\n", p->nome_giocatore);
             }
 
             p->zaino[i]=nessun_oggetto;
@@ -1026,10 +1026,10 @@ static int torna_caravan(struct Giocatore* p){
         // All the evidence has been "deposited"
         ret = 1;
         color('g');
-        printf("\nQuesta era l'ultima prova!\n");
+        printf("\nQuesta era l'ultima prova!\n\n\n\n");
     } else if (ret == -1){
         color('r');
-        printf("\n%s non ha prove da depositare, beve un caffe'!\n", p->nome_giocatore);
+        printf("\n\n\n\n%s non ha prove da depositare, beve un caffe'!\n\n\n\n", p->nome_giocatore);
     } else if (tof){
         //At least one piece of evidence is yet to be found
         for (x = 0; x < 4; x++) {
@@ -1041,15 +1041,15 @@ static int torna_caravan(struct Giocatore* p){
                         p->zaino[x] = i;
                         switch (i) {
                             case 0:{
-                                printf("\n%s in un cassetto del Caravan trova un EMF e lo raccoglie\n", p->nome_giocatore);
+                                printf("\n%s in un cassetto del Caravan trova un EMF e lo raccoglie\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                             case 1:{
-                                printf("\n%s per terra davanti al Caravan trova uno Spirit Box e lo raccoglie\n", p->nome_giocatore);
+                                printf("\n%s per terra davanti al Caravan trova uno Spirit Box e lo raccoglie\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                             case 2:{
-                                printf("\n%s in un ripiano del Caravan trova una videocamera e la raccoglie\n", p->nome_giocatore);
+                                printf("\n%s in un ripiano del Caravan trova una videocamera e la raccoglie\n\n\n\n", p->nome_giocatore);
                                 break;
                             }
                         }
