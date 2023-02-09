@@ -466,7 +466,7 @@ static void inserisci_zona(){
     tmp_zona->prova = nessuna_prova;
     pLast = tmp_zona;
     cls();
-    printf("\n                                          Nuova zona Inserita!\n");
+    printf("\n                                            Nuova zona Inserita!\n");
     stampa_zona(pLast);
 }
 
@@ -1328,7 +1328,7 @@ int imposta_gioco(){
                 switch (usrChoice) {
                     case 1:{
                         inserisci_zona();
-                        printf("\n                                        Premere INVIO per continuare");
+                        printf("\n\n\n\n\n                                        Premere INVIO per continuare\n");
                         while ((getchar()) != '\n');
                         getchar();
                         cls();
