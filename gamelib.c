@@ -1156,8 +1156,8 @@ int imposta_gioco(){
 
     turn_manager(turni);
     cls();
-    printf("\n\n\n\n\n                                     Scelta degli oggetti iniziali");
     for(z=0; z<playerNumber; z++){
+        printf("\n\n\n\n\n                                     Scelta degli oggetti iniziali");
         printf("\n                                              _____________");
         for (x = 0; x < playerNumber; x++) {
             printf("\n                                             |%d|", x+1);
@@ -1193,7 +1193,7 @@ int imposta_gioco(){
         for(x=0;x<(4-playerNumber);x++){
             printf("\n");
         }
-        printf("\n\n");
+        printf("\n\n\n\n\n");
         do {
             printf("\n[Giocatore %d, %s]>", turni[z]+1, giocatori[turni[z]]->nome_giocatore);
             exitCode = scanf("%d", &usrChoice);
@@ -1272,6 +1272,7 @@ int imposta_gioco(){
             }
             oggetti_iniziali[usrChoice-1] = 99;
         } while (!valid);
+        cls();
     }
 
 
