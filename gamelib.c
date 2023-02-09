@@ -326,11 +326,11 @@ static void stampa_giocatore(struct Giocatore* p){
     str_spacer(ms, 3);
     cls();
     printf("\n\n           __________________________________________________________________________________"
-           "\n          |     ___                                  NOME:                                   |"
+           "\n          |     ___                                  \033[1;37mNOME:\033[0;37m                                   |"
            "\n          |    /.,.\\    %s     |"//64
-           "\n          |  __\\ - /__                          SANITA' MENTALE:                             |"
+           "\n          |  __\\ - /__                          \033[1;37mSANITA' MENTALE:\033[0;37m                             |"
            "\n          | |         |                               %s                                    |"//3
-           "\n          | | |     | |                              ZAINO:                                  |"
+           "\n          | | |     | |                              \033[1;37mZAINO:\033[0;37m                                  |"
            "\n          | | |     | |                      ---------------------                           |"
            "\n          | |_|     |_|                      | %s |                           |"//17
            "\n          |   |  |  |                        | %s |                           |"//17
@@ -470,7 +470,9 @@ static void inserisci_zona(){
     tmp_zona->prova = nessuna_prova;
     pLast = tmp_zona;
     cls();
+    color('g');
     printf("\n\n                                            Nuova zona Inserita!");
+    color('w');
     stampa_zona(pLast);
 }
 

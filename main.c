@@ -127,7 +127,7 @@ int main() {
             break;
 
     }
-    // 2 second sleep
+    // 1 second sleep
     time_t start, end;
     time(&start);
     do time(&end); while(difftime(end, start) <= 1);
