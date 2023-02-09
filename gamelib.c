@@ -1089,6 +1089,11 @@ int imposta_gioco(){
                 giocatori[z]->zaino[x] = 13;
 
             }
+            if(z == playerNumber-1){
+                // 3 second sleep
+                time(&start);
+                do time(&end); while(difftime(end, start) <= 3);
+            }
             cls();
         } else {
             // z-th player isn't playing so it's NULL
