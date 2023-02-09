@@ -750,9 +750,9 @@ static int usa_oggetto(struct Giocatore* p){
     int i;
     bool kill;
     cls();
-    printf("\n\n                                   Quale oggetto desideri utilizzare?\n");
+    printf("\n\n                                   Quale oggetto desideri utilizzare?\n\n");
     stampa_zaino(p);
-    printf("\n\n\n\n\n>");
+    printf("\n\n\n\n\n\n>");
     do{
         exitCode = scanf("%d", &usrChoice);
         if (exitCode==1 && playerNumber >= 0 && playerNumber <= 4) {
@@ -770,19 +770,34 @@ static int usa_oggetto(struct Giocatore* p){
                         } else {
                             p->sanita_mentale = 200;
                         }
-                        printf("\n                        Hai usato i Calmanti, la tua salute mentale e' ora %d!\n", p->sanita_mentale);
+                        color('g');
+                        printf("\n\n\n\n\n\n\n\n\n\n                        Hai usato i Calmanti, la tua salute mentale e' ora %d!\n\n\n\n\n\n\n\n\n", p->sanita_mentale);
+                        color('w');
+                        // 1 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 1);
                         p->zaino[usrChoice-1] = (int) nessun_oggetto;
                         return 1;
                     }
                     case 4:{
                         // sale
-                        printf("\n                     Hai usato il Sale, se comparira' un Fantasma sarai al sicuro!\n");
+                        color('g');
+                        printf("\n\n\n\n\n\n\n\n\n\n                     Hai usato il Sale, se comparira' un Fantasma sarai al sicuro!\n\n\n\n\n\n\n\n\n");
+                        color('w');
+                        // 1 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 1);
                         p->zaino[usrChoice-1] = (int) nessun_oggetto;
                         return 2;
                     }
                     case 10:{
                         // adrenalina
-                        printf("\n                            Hai usato l'Adrenalina, potrai avanzare due volte!\n");
+                        color('g');
+                        printf("\n\n\n\n\n\n\n\n\n\n                            Hai usato l'Adrenalina, potrai avanzare due volte!\n\n\n\n\n\n\n\n\n");
+                        color('w');
+                        // 1 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 1);
                         p->zaino[usrChoice-1] = (int) nessun_oggetto;
                         return 3;
                     }
@@ -791,17 +806,27 @@ static int usa_oggetto(struct Giocatore* p){
                         if(rand() % 2 == 0){
                             // calmanti
                             p->zaino[usrChoice-1] = 3;
-                            printf("\n                     Hai usato i 100 Dollari, in cambio hai ricevuto dei Calmanti!\n");
+                            color('g');
+                            printf("\n\n\n\n\n\n\n\n\n\n                     Hai usato i 100 Dollari, in cambio hai ricevuto dei Calmanti!\n\n\n\n\n\n\n\n\n");
+                            color('w');
+                            // 1 second sleep
+                            time(&start);
+                            do time(&end); while(difftime(end, start) <= 1);
                         } else {
                             // sale
                             p->zaino[usrChoice-1] = 4;
-                            printf("                        Hai usato i 100 Dollari, in cambio hai ricevuto del Sale!\n");
+                            color('g');
+                            printf("\n\n\n\n\n\n\n\n\n\n                        Hai usato i 100 Dollari, in cambio hai ricevuto del Sale!\n\n\n\n\n\n\n\n\n");
+                            color('w');
+                            // 1 second sleep
+                            time(&start);
+                            do time(&end); while(difftime(end, start) <= 1);
                         }
                         return 1;
                     }
                     case 12:{
                         // coltello
-                        printf("\nHai usato il Coltello, ");
+                        printf("\n\n\n\n\n\n\n\n\n\nHai usato il Coltello, ");
                         if(p->sanita_mentale < 30){
                             for(i=0; i< playerNumber; i++){
                                 if(giocatori[i] != p){
@@ -817,9 +842,9 @@ static int usa_oggetto(struct Giocatore* p){
                                 printf("\n");
                             }
                             if(!kill){
-                                printf("hai avuto un attacco di rabbia!\nFortunatamente non c'era nessuno nelle vicinanze.\n");
+                                printf("hai avuto un attacco di rabbia!\nFortunatamente non c'era nessuno nelle vicinanze.\n\n\n\n\n\n\n\n");
                             } else {
-                                printf("!\n");
+                                printf("!\n\n\n\n\n\n\n\n\n");
                             }
                         } else {
                             printf("non succede niente...\n");
@@ -828,7 +853,12 @@ static int usa_oggetto(struct Giocatore* p){
                         return 1;
                     }
                     default:{
-                        printf("\nNon e' possibile usare l'oggetto selezionato!\n");
+                        color('r');
+                        printf("\n\n\n\n\n\n\n\n\n\n                             Non e' possibile usare l'oggetto selezionato!\n\n\n\n\n\n\n\n\n");
+                        color('w');
+                        // 1 second sleep
+                        time(&start);
+                        do time(&end); while(difftime(end, start) <= 1);
                         usrChoice = -1;
                         return -1;
                     }
