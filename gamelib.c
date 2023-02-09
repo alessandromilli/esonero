@@ -869,8 +869,20 @@ static int torna_caravan(struct Giocatore* p){
     p->posizione = zona_caravan;
     alr_dep = false;
     tof= false;
-
-    printf("\n\n%s decide di tornare al caravan!", p->nome_giocatore);
+    cls();
+    printf("\n\n"
+           "\n                                             ______________"
+           "\n                                            /      __      \\"
+           "\n                                           | [][] |[]|  __  |"
+           "\n                                           |      | .| |__| |"
+           "\n                                           | ___  |  | ___  |"
+           "\n                                           [( * )_|__|( * );]");
+    color('x');
+    printf("\n\n                                              CARAVAN...");
+    color('w');
+    // 1 second sleep
+    time(&start);
+    do time(&end); while(difftime(end, start) <= 1);
 
     for(i=0;i<4;i++){
         // For every position of the player's backpack
@@ -1475,7 +1487,13 @@ int gioca(){
                                     won = true;
                                 }
                                 usrChoice = 8;
-                                printf("\n%s (Player %d), alla prossima!", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                                cls();
+                                color('b');
+                                printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                                color('w');
+                                // 2 second sleep
+                                time(&start);
+                                do time(&end); while(difftime(end, start) <= 2);
                                 break;
                             }
                             case 2:{
@@ -1485,9 +1503,9 @@ int gioca(){
                             }
                             case 3:{
                                 // Display current zone data
-                                printf("\n\n");
+                                printf("\n");
                                 stampa_zona(giocatori[turni[x]]->posizione);
-                                printf("\n\n\n\n                                       Premere INVIO per continuare\n");
+                                printf("\n\n\n\n\n                                       Premere INVIO per continuare\n");
                                 while ((getchar()) != '\n');
                                 getchar();
                                 cls();
@@ -1540,7 +1558,13 @@ int gioca(){
                                 break;
                             }
                             case 8:{
-                                printf("\n%s (Player %d), alla prossima!", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                                cls();
+                                color('b');
+                                printf("\n\n\n\n\n\n\n\n\n\n%s, alla prossima...\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
+                                color('w');
+                                // 2 second sleep
+                                time(&start);
+                                do time(&end); while(difftime(end, start) <= 2);
                                 break;
                             }
                             default:{
@@ -1627,6 +1651,7 @@ int gioca(){
                     // The player has just died
                     printf("\n\n%s (Player %d), e' impazzito e gli spiriti se lo sono preso!", giocatori[turni[x]]->nome_giocatore, turni[x]+1);
                     usrChoice = 8;
+
                 }
             }while(usrChoice != 8);
 
