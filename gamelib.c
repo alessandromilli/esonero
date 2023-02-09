@@ -870,15 +870,15 @@ static int torna_caravan(struct Giocatore* p){
     alr_dep = false;
     tof= false;
     cls();
+    color('x');
     printf("\n\n"
            "\n                                             ______________"
            "\n                                            /      __      \\"
            "\n                                           | [][] |[]|  __  |"
            "\n                                           |      | .| |__| |"
            "\n                                           | ___  |  | ___  |"
-           "\n                                           [( * )_|__|( * );]");
-    color('x');
-    printf("\n\n                                                CARAVAN...");
+           "\n                                           [( * )_|__|( * );]"
+           "\n\n                                                CARAVAN...");
     color('w');
     printf("sabbadu");
     // 1 second sleep
