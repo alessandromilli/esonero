@@ -1729,7 +1729,7 @@ int gioca(){
                         }
                         cls();
                         color('r');
-                        printf("\n\n\n\n\n\n\n\n\n\n%s appena visto il Fantasma, da di matto, la sua sanita' mentale scende a %d\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore, giocatori[turni[x]]->sanita_mentale);
+                        printf("\n\n\n\n\n\n\n\n\n\n%s appena visto il Fantasma, da di matto, la sua sanita' mentale scende a %d\n\n\n\n\n\n\n\n\n", giocatori[turni[x]]->nome_giocatore);
                         usrChoice = 8;
                         // 1 second sleep
                         time(&start);
