@@ -1029,7 +1029,7 @@ int imposta_gioco(){
             // Allocate memory and initialize the z-th player
             giocatori[z] = malloc(sizeof(struct Giocatore));
             // Insert Name
-            printf("\n\n\n\n\n");
+            printf("\n\n\n\n\n\n");
             for (y=0;y<z;y++){
                 printf("\n Player %d, %s", y, giocatori[y]->nome_giocatore);
             }
@@ -1039,7 +1039,7 @@ int imposta_gioco(){
             for (y=0;y<(4-playerNumber);y++){
                 printf("\n");
             }
-            printf("\n\n\n\n\n\n\n");
+            printf("\n\n\n\n\n\n");
             do {
                 while ((getchar()) != '\n');
                 for (x=0;x<z;x++) {
@@ -1088,11 +1088,6 @@ int imposta_gioco(){
             for(x=0; x<4; x++){
                 giocatori[z]->zaino[x] = 13;
 
-            }
-            if(z == playerNumber-1){
-                // 3 second sleep
-                time(&start);
-                do time(&end); while(difftime(end, start) <= 3);
             }
             cls();
         } else {
