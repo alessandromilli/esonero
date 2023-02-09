@@ -338,9 +338,10 @@ static void stampa_giocatore(struct Giocatore* p){
            "\n          |   |  |  |                        | %s |                           |"//17
            "\n          |   |__|__|                        |___________________|                           |"
            "\n          |__________________________________________________________________________________|\n\n", name, ms, bckpk[0], bckpk[1], bckpk[2], bckpk[3]);
-    // 2 second sleep
-    time(&start);
-    do time(&end); while(difftime(end, start) <= 2);
+    color('w');
+    printf("\n                                        Premere INVIO per continuare\n");
+    while ((getchar()) != '\n');
+    getchar();
     cls();
 }
 
@@ -455,7 +456,7 @@ static void stampa_zona(struct Zona_mappa *z){
                "\n                                   |           -ZONA INIZIALE-          |"
                "\n                                   |               PROVA:               |"
                "\n                                   |          %s         |"
-               "\n                                   |____________________________________|\n", prova);
+               "\n                                   |____________________________________|\n\n\n\n", prova);
     }
 }
 
@@ -1484,8 +1485,9 @@ int gioca(){
                             }
                             case 3:{
                                 // Display current zone data
+                                printf("\n\n");
                                 stampa_zona(giocatori[turni[x]]->posizione);
-                                printf("\n                                       Premere INVIO per continuare");
+                                printf("\n\n\n\n                                       Premere INVIO per continuare\n");
                                 while ((getchar()) != '\n');
                                 getchar();
                                 cls();
