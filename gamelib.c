@@ -118,6 +118,17 @@ static void str_spacer(char *str, int req_len){
     str[req_len] = '\0';
 }
 
+void spaces_rm(char *str)
+{
+    int i, len;
+    for(len = 0; str[len] != '\0'; len++);
+    while (str[0] == 32){
+        for(i=0;str[i] != '\0'; i++){
+            str[i] = str[i+1];
+        }
+    }
+}
+
 static void turn_manager(int *turns){
     bool valid;
     int i, z;
@@ -985,10 +996,10 @@ static void avanza(struct Giocatore* p){
                    "\n                                                 CAMERA\n\n\n\n");
             break;
         case bagno:
-            printf("\n\n\n\n                                                       ______"
-                   "\n                                                       \\     \\."
+            printf("\n\n\n\n                                                        ______"
+                   "\n                                                       |\\     \\"
                    "\n                                                       |`\\_____\\"
-                   "\n                                                       |` |    |"
+                   "\n                                                       |  |    |"
                    "\n                                                       |  |    |"
                    "\n                                          __-====-__  _|  |    |"
                    "\n                                         (~<       >~>  \\ |    |"
@@ -1030,6 +1041,9 @@ static void avanza(struct Giocatore* p){
                    "\n                                  /|_____|               |        |  \\"
                    "\n                                 /            SEMINTERRATO            \\"
                    "\n                                /______________________________________\\\n\n\n");
+            break;
+        default:
+            //impossible
             break;
     }
     // 1 second sleep
@@ -1297,6 +1311,7 @@ int imposta_gioco(){
 
 
                 } else {
+                    spaces_rm(giocatori[z]->nome_giocatore);
                     valid = true;
                     printf("\nYour name is is: \"%s\", press ENTER to Continue>", giocatori[z]->nome_giocatore);
                     scanf("%*[^\n]%*c");
