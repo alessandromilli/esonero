@@ -120,12 +120,20 @@ static void str_spacer(char *str, int req_len){
 
 void spaces_rm(char *str)
 {
+    // Remove leading and trailing spaces
     int i, len;
     for(len = 0; str[len] != '\0'; len++);
+    printf("%d", len);
     while (str[0] == 32){
         for(i=0;str[i] != '\0'; i++){
             str[i] = str[i+1];
         }
+    }
+    for(i=len;str[i]==32 || str[i]=='\0';i--){
+        str[i]='\0';
+    }
+    if(str[0]=='\0'){
+        strcpy(str, "Player");
     }
 }
 
