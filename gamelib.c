@@ -1953,12 +1953,14 @@ int gioca(){
         do time(&end); while(difftime(end, start) <= 1);
         cls();
     }
-    printf("\n     %s", giocatori[0]->nome_giocatore);
+    printf("\n\n\n\n\n\n\n\n\n\n     %s", giocatori[0]->nome_giocatore);
     for (x=1;x<playerNumber;x++) {
         printf(", %s", giocatori[x]->nome_giocatore);
     }
-    printf(", Grazie per aver giocato a PhalsoPhobia!");
-
+    printf(", Grazie per aver giocato a PhalsoPhobia!\n\n\n\n\n\n\n\n\n");
+    time(&start);
+    do time(&end); while(difftime(end, start) <= 1);
+    cls();
     return 0;
 }
 
