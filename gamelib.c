@@ -1292,7 +1292,7 @@ int imposta_gioco(){
                 if(!valid){
                     cls();
                 }
-                printf("\nPlayer %d, Insert Your Name>", z+1);
+                printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlayer %d, Insert Your Name>", z+1);
                 fgets(giocatori[z]->nome_giocatore, 64, stdin);
                 // fgets reads up to and including a /n, which I have to remove
                 for (x = 0; x < 64 && giocatori[z]->nome_giocatore[x] != 0; x++) {
