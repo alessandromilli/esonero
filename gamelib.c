@@ -1289,9 +1289,7 @@ int imposta_gioco(){
             printf("\n\n\n\n\n");
             do {
                 while ((getchar()) != '\n');
-                if(!valid){
-                    cls();
-                }
+
                 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlayer %d, Insert Your Name>", z+1);
                 fgets(giocatori[z]->nome_giocatore, 64, stdin);
                 // fgets reads up to and including a /n, which I have to remove
