@@ -1056,7 +1056,7 @@ static void avanza(struct Giocatore* p){
     }
     // 1 second sleep
     time(&start);
-    do time(&end); while(difftime(end, start) <= 5);
+    do time(&end); while(difftime(end, start) <= 1);
     color('w');
     cls();
 }
@@ -1309,8 +1309,14 @@ int imposta_gioco(){
                     cls();
                     color('r');
                     valid = false;
-                    printf("\n\n\n\n\n\n\n\n\n\n                              AN UNEXPECTED ERROR OCCURED, INSERT AGAIN!\n\n\n\n\n\n\n\n\n");
-                    while ((getchar()) != '\n');
+                    printf("\n\n\n\n\n\n\n\n\n\n                               AN UNEXPECTED ERROR OCCURED, PRESS ENTER!\n\n\n\n\n\n\n\n\n");
+                    scanf("%*[^\n]%*c");
+                    //This "flushes" the stdin buffer up until the \n
+                    /* the %*[^\n] part scans the buffer until it finds a \n
+                     * the * part discards whatever was just scanned
+                     * The %*c scans and discards the \n left by the first part
+                     * The printf prevents the player from having to press enter twice
+                     * */
                     // 1 second sleep
                     time(&start);
                     do time(&end); while(difftime(end, start) <= 1);
