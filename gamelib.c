@@ -1315,9 +1315,6 @@ int imposta_gioco(){
                      * The %*c scans and discards the \n left by the first part
                      * The printf prevents the player from having to press enter twice
                      * */
-                    // 1 second sleep
-                    time(&start);
-                    do time(&end); while(difftime(end, start) <= 1);
                     cls();
                     color('w');
                 } else {
