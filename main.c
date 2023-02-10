@@ -10,19 +10,7 @@ int main() {
     unsigned char exitCode;
     int usrChoice;
     bool valid, set;
-    //TODO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    //\a alarm
-    // \r e \f da provare
-    //For BOLD just replace the initial 0 before the ; with a 1. BOLD green would be\033[1;32m
-    //Black \033[0;30m
-    //Red \033[0;31m
-    //Green \033[0;32m
-    //Yellow \033[0;33m
-    //Blue \033[0;34m
-    //Purple \033[0;35m
-    //Cyan \033[0;36m
-    //White \033[0;37m
-    printf("\n--------------------------------------------------------------------------------------------------------"
+    printf("\n\a--------------------------------------------------------------------------------------------------------"
            "\n|                                                                                                   __  |"
            "\n|                                                                                                    /| |"
            "\n|                                                                                                   /   |"

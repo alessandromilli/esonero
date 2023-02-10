@@ -17,6 +17,7 @@ enum Tipo_prova prove_raccolte[3];
 time_t start, end;
 
 static void color(char c){
+    // Change the color of the text displayed on the terminal
     switch (c) {
         case 'r':
             printf("\033[0;31m");
