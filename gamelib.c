@@ -1289,12 +1289,7 @@ int imposta_gioco(){
             printf("\n\n\n\n\n");
             do {
                 while ((getchar()) != '\n');
-                for (x=0;x<z;x++) {
-
-                }
-
                 printf("\nPlayer %d, Insert Your Name>", z+1);
-
                 fgets(giocatori[z]->nome_giocatore, 64, stdin);
                 // fgets reads up to and including a /n, which I have to remove
                 for (x = 0; x < 64 && giocatori[z]->nome_giocatore[x] != 0; x++) {
@@ -1322,8 +1317,6 @@ int imposta_gioco(){
                     do time(&end); while(difftime(end, start) <= 1);
                     cls();
                     color('w');
-
-
                 } else {
                     spaces_rm(giocatori[z]->nome_giocatore);
                     valid = true;
