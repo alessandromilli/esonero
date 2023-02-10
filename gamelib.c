@@ -123,7 +123,6 @@ void spaces_rm(char *str)
     // Remove leading and trailing spaces
     int i, len;
     for(len = 0; str[len] != '\0'; len++);
-    printf("%d", len);
     while (str[0] == 32){
         for(i=0;str[i] != '\0'; i++){
             str[i] = str[i+1];
