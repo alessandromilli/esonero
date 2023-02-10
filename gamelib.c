@@ -81,6 +81,7 @@ static void color(char c){
 }
 
 static void cls(){
+    // Clears the terminal by "scrolling down"
     printf("\e[1;1H\e[2J");
 }
 
@@ -132,6 +133,7 @@ void spaces_rm(char *str)
     for(i=len;str[i]==32 || str[i]=='\0';i--){
         str[i]='\0';
     }
+    // If the user inserted only spaces, give him "Player as a name"
     if(str[0]=='\0'){
         strcpy(str, "Player");
     }
@@ -210,6 +212,7 @@ static int genera_prova(){
      * 1/5 (20%) probability that it will be prova_spirit_box
      * 1/5 (20%) probability that it will be prova_videocamera
      * */
+    // Breaks are useless here, the return will end the switch
     switch (rand() % 5) {
         case 0:{
             // prova_EMF
@@ -233,6 +236,7 @@ static int genera_prova(){
 
 static int genera_ogg_iniziale(){
     // enum Tipo_oggetto_iniziale {EMF = 0,spirit_box = 1, videocamera = 2, calmanti = 3, sale = 4};
+    // Breaks are useless here, the return will end the switch
     switch (rand() % 5) {
         case 0:{
             // EMF
@@ -591,7 +595,7 @@ static int raccogli_oggetto(struct Giocatore* p){
         if(p->posizione->oggetto_zona != nessun_oggetto){
             // If there is still an item in the current zone, it means that it hasn't been picked up and the backpack is full
             color('r');
-            printf("\n\n\n\n\n\n                   Non e' stato possibile raccogliere l'oggetto, lo zaino e' pieno!\n\n\n\n\n\n\n\n\n");
+            printf("\n\n\n\n\n\n\n\n                   Non e' stato possibile raccogliere l'oggetto, lo zaino e' pieno!\n\n\n\n\n\n\n\n\n");
             color('w');
             time(&start);
             do time(&end); while(difftime(end, start) <= 1);
@@ -600,7 +604,7 @@ static int raccogli_oggetto(struct Giocatore* p){
         } else {
             // The item has been picked up correctly
             color('g');
-            printf("\n\n\n\n\n\n\n                                      Hai raccolto l'oggetto!\n\n\n\n\n\n\n\n\n\n");
+            printf("\n\n\n\n\n\n\n\n                                      Hai raccolto l'oggetto!\n\n\n\n\n\n\n\n\n\n");
             color('w');
             time(&start);
             do time(&end); while(difftime(end, start) <= 1);
